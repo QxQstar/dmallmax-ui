@@ -1,0 +1,15 @@
+{
+  "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "chore", "revert"],
+  "scope": {
+    "required": false,
+    "allowed": ["*"],
+    "validate": false,
+    "multiple": false
+  },
+  "warnOnFail": false,
+  "maxSubjectLength": 52,
+  "subjectPattern": ".{4,}",
+  "subjectPatternErrorMsg": "subject 至少四个字",
+  "helpMessage": "请查看.vcmrc或者http://dev.fe-doc.wmdev2.lsh123.com/share/commitmsg.html得到正确的commit message 格式",
+  "autoFix": true
+}

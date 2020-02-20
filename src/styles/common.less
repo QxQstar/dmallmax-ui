@@ -1,0 +1,37 @@
+@import "./variables.less";
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,html,#app{
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  color: @main-font-color;
+  font-size: @main-font-size;
+  font-family: Arial,sans-serif;
+}
+
+.elem_no-scale {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.elem_1x{
+  flex: 1;
+}
+.elem_2x{
+  flex: 2;
+}
+
+.scrollbar-wrapper {
+  overflow-x: hidden !important;
+}
+
+.link-text{
+  cursor: pointer;
+  color: @active-color;
+}

@@ -1,0 +1,94 @@
+@import "./variables.less";
+
+/* layout */
+.g-layout{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.g-container{
+  display: flex;
+  overflow: auto;
+}
+
+.g-main-content{
+  padding: @small-padding;
+}
+
+/* 侧边栏 */
+.g-slider{
+  background-color: @slide-bg-color;
+  padding-top: @main-padding;
+  padding-bottom: @main-padding;
+  overflow: hidden;
+  // 侧边栏的宽度
+  &.g-slider_large{
+    width: @large-slide-width;
+  }
+  &.g-slider_small{
+    width: @small-slide-width;
+  }
+  &.g-slider_hidden{
+    width: @hidden-slide-width;
+  }
+  .g-slider-inner{
+    height: 100%;
+    // reset element-ui css
+    .el-menu{
+      background-color: transparent;
+    }
+  }
+}
+
+
+/* header */
+
+.g-header {
+  display: flex;
+  padding: 0 @main-padding;
+  justify-content: space-between;
+  background-color: @top-nav-bg-color;
+  height: @top-nav-height;
+  line-height: @top-nav-height;
+  color: #ffffff;
+  overflow: hidden;
+  &.g-header_hidden{
+    height: @hidden-top-nav-height;
+    line-height: @hidden-top-nav-height;
+  }
+  .logo{
+    display: inline-block;
+    .logo__img{
+      max-height: 70%;
+      vertical-align: middle;
+    }
+  }
+  .header-main{
+    display: flex;
+  }
+  .nav-box{
+    font-size: 0;
+    .nav-box__nav{
+      position: relative;
+      display: inline-block;
+      font-size: @main-font-size;
+      color: #ffffff;
+      opacity: 0.8;
+      margin: 0 @small-padding;
+      cursor: pointer;
+    }
+    .nav-box__nav_active,
+    .nav-box__nav:hover {
+      opacity: 1;
+    }
+    .nav-box__nav_active:after{
+      content: '';
+      height: 2px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      background-color: #ffffff;
+    }
+  }
+}
