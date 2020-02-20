@@ -1,13 +1,13 @@
 {
   "name": "dmallmax-ui",
   "version": "0.0.1",
-  "private": true,
   "main": "dist/DMALLMAX.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name DMALLMAX ./src/components/element-ui/index.js",
     "lint": "vue-cli-service lint",
-    "pub": "npm run build && npm publish --access public"
+    "pub": "npm run build && npm publish --access public",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "clipboard": "2.0.4",
@@ -34,7 +34,8 @@
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "validate-commit-msg": "^2.14.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "conventional-changelog-cli": "^2.0.23"
   },
   "config": {
     "ghooks": {
