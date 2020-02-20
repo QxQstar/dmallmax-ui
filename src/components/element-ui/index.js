@@ -173,12 +173,12 @@ function install(Vue,opts = {}) {
   Vue.use(DmLoading.extends.directive);
 
   Vue.prototype.$loading = DmLoading.extends.service;
-  Vue.prototype.$msgbox = DmMessageBox;
+  Vue.prototype.$msgbox = DmMessageBox.extends;
   Vue.prototype.$alert = DmMessageBox.extends.alert;
   Vue.prototype.$confirm = DmMessageBox.extends.confirm;
   Vue.prototype.$prompt = DmMessageBox.extends.prompt;
-  Vue.prototype.$notify = DmNotification;
-  Vue.prototype.$message = DmMessage;
+  Vue.prototype.$notify = DmNotification.extends;
+  Vue.prototype.$message = DmMessage.extends;
 }
 
 /* istanbul ignore if */
