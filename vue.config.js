@@ -1,7 +1,7 @@
 module.exports = {
   publicPath: '/',
   outputDir: 'dist',
-  lintOnSave: false,
+  lintOnSave: 'error',
   configureWebpack: {
     output: {
       libraryExport: 'default'

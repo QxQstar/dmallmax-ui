@@ -29,7 +29,7 @@
         }
     },
     methods:{
-      handleChangeNav(index) {
+      handleChangeNav() {
         // todo
       }
     }
