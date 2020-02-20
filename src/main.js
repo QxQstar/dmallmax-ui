@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-// import './components/element-ui/index.js'
 import './filters/common/index.js'
 import './styles/index.less'
-import './assets/dist/dmallmax-ui.css'
-import DMUI from './assets/dist/dmallmax-ui.common.js'
-
+// import './../dist/DMALLMAX.css'
+// import DMUI from './../dist/DMALLMAX.common'
+import DMUI from './components/element-ui/index'
 Vue.use(DMUI)
 
 Vue.config.productionTip = false

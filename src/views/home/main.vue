@@ -13,6 +13,9 @@
   export default {
     data() {
         return {}
+    },
+    created() {
+      this.$message.success('rrr')
     }
   }
 </script>

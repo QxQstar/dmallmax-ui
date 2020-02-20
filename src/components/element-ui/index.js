@@ -37,14 +37,14 @@ import DmImage from './image.vue'
 import DmInputNumber from './input-number.vue'
 import DmInput from './input.vue'
 import DmLink from './link.vue'
-import DmLoading from './loading.vue'
+import DmLoading from './loading.js'
 import DmMain from './main.vue'
 import DmMenuItemGroup from './menu-item-group.vue'
 import DmMenuItem from './menu-item.vue'
 import DmMenu from './menu.vue'
-import DmMessage from './message.vue'
-import DmMessageBox from './messageBox.vue'
-import DmNotification from './notification.vue'
+import DmMessage from './message.js'
+import DmMessageBox from './messageBox.js'
+import DmNotification from './notification.js'
 import DmOption from './option.vue'
 import DmOptionGroup from './optionGroup.vue'
 import DmPageHeader from './page-header.vue'
@@ -124,9 +124,6 @@ const components = {
   DmMenuItemGroup: DmMenuItemGroup,
   DmMenuItem: DmMenuItem,
   DmMenu: DmMenu,
-  DmMessage: DmMessage,
-  DmMessageBox: DmMessageBox,
-  DmNotification: DmNotification,
   DmOption: DmOption,
   DmOptionGroup: DmOptionGroup,
   DmPageHeader: DmPageHeader,
@@ -170,15 +167,15 @@ function install(Vue,opts = {}) {
     size: opts.size || '',
     zIndex: opts.zIndex || 2000
   };
-  Vue.use(DmLoading.extends.directive);
+  Vue.use(DmLoading.directive);
 
-  Vue.prototype.$loading = DmLoading.extends.service;
-  Vue.prototype.$msgbox = DmMessageBox.extends;
-  Vue.prototype.$alert = DmMessageBox.extends.alert;
-  Vue.prototype.$confirm = DmMessageBox.extends.confirm;
-  Vue.prototype.$prompt = DmMessageBox.extends.prompt;
-  Vue.prototype.$notify = DmNotification.extends;
-  Vue.prototype.$message = DmMessage.extends;
+  Vue.prototype.$loading = DmLoading.service;
+  Vue.prototype.$msgbox = DmMessageBox;
+  Vue.prototype.$alert = DmMessageBox.alert;
+  Vue.prototype.$confirm = DmMessageBox.confirm;
+  Vue.prototype.$prompt = DmMessageBox.prompt;
+  Vue.prototype.$notify = DmNotification;
+  Vue.prototype.$message = DmMessage;
 }
 
 /* istanbul ignore if */
