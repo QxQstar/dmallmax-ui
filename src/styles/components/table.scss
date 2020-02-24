@@ -1,0 +1,19 @@
+@import "../../theme/reset-variables";
+.el-table{
+  font-size: $--font-size-base;
+  .el-table__row{
+    td{
+      border-bottom-color: transparent;
+    }
+  }
+  th.is-leaf{
+    border-bottom-color: transparent;
+  }
+  .el-table__row:nth-child(odd){
+    background-color: $__table-stripe_background-color;
+    &:hover{
+      background-color: $__table-stripe_background-color !important;
+    }
+
+  }
+}
