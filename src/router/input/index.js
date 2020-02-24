@@ -1,6 +1,6 @@
 export default [
   {
-    path:'/checkbox',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/checkbox/main.vue')
+    path:'/input',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/input/main.vue')
   },
 ]

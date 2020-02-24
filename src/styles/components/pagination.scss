@@ -1,0 +1,20 @@
+@import "../../theme/reset-variables";
+.el-pagination{
+  font-weight: $--font-weight-primary;
+  text-align: center;
+  &.is-background{
+    .btn-prev,
+    .btn-next,
+    .el-pager li{
+      background-color: $--color-white;
+      border: 1px solid $--border-color-base;
+    }
+
+    .el-pager li{
+      &.active{
+        border-color: $--color-primary;
+      }
+    }
+  }
+}
+

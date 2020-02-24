@@ -78,7 +78,6 @@ import DmTooltip from './tooltip.vue'
 import DmTransfer from './transfer.vue'
 import DmTree from './tree.vue'
 import DmUpload from './upload.vue'
-import '../../theme/element-variables.scss'
 import '../../styles/components/index.scss'
 const components = {
   DmAlert: DmAlert,
@@ -161,7 +160,7 @@ const components = {
 
 function install(Vue,opts = {}) {
   Object.keys(components).forEach(key => {
-    Vue.component(key,components[key].extends)
+    Vue.component(key,components[key])
   })
   Vue.prototype.$DMALLMAX = {
     size: opts.size || '',

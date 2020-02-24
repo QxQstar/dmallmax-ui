@@ -21,6 +21,10 @@
     >
       朴素按钮
     </dm-button>
+
+    <dm-button type="text">
+      ddf
+    </dm-button>
   </div>
 </template>
 
