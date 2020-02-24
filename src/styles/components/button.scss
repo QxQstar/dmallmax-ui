@@ -1,7 +1,8 @@
-@import "../../theme/element-variables";
+@import "../../theme/reset-variables";
 .el-button--primary.is-plain{
-  border-color: $--color-primary !important; ;
-  &:hover{
+  border-color: $--color-primary ;
+  &:hover,
+  &:focus{
     background-color: $--color-primary-light-9 !important;
     color: $--color-primary !important;
     box-shadow: 1px 1px 3px $--color-primary-light-2;
@@ -9,9 +10,18 @@
 }
 
 .el-button--default{
-  &:hover{
+  &:hover,
+  &:focus{
     background-color: $--color-white !important;
     border-color: $--border-color-base !important;
     color: $--color-text-regular !important;
+  }
+}
+
+.el-button--text{
+  color: $--link-color;
+  &:hover,
+  &:focus{
+    color: $--link-hover-color;
   }
 }

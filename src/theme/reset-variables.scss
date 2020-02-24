@@ -1,0 +1,31 @@
+/* 改变主题色变量 */
+$--color-primary: #FE9350;
+$--color-secondary:#2298E4;
+$--color-white:#ffffff;
+$--border-color-base:#e4e7ed;
+/// color|1|Font Color|2
+$--color-text-primary: #333333;
+/// color|1|Font Color|2
+$--color-text-regular: #606266;
+/// color|1|Font Color|2
+$--color-text-secondary: #909399;
+/// color|1|Font Color|2
+$--color-text-placeholder: #C0C4CC;
+
+/* Typography */
+$--font-size-large: 16px;
+$--font-size-medium: 14px;
+$--font-size-base:13px;
+$--font-size-small: 12px;
+$--font-size-extra-small: 11px;
+$--font-weight-primary:400;
+$--font-weight-secondary: 200;
+$--font-line-height-primary: 1.5;
+$--font-line-height-secondary: 1.3;
+
+/* button */
+$--button-hover-tint-percent: 0;
+
+/* link */
+$--link-color:$--color-secondary;
+$--link-hover-color: $--color-secondary
