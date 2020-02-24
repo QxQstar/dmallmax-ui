@@ -1,0 +1,8 @@
+@import "../../theme/reset-variables";
+.el-step__title{
+  font-size: $__font-size-small;
+  font-weight: $__font-weight-primary;
+  &.is-process{
+    font-weight: $__font-weight-primary;
+  }
+}
