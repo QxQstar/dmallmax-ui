@@ -1,0 +1,22 @@
+/* 改变主题色变量 */
+$--color-primary: #FE9350;
+$--font-weight-primary:400;
+$--border-color-base:#e4e7ed;
+/// color|1|Font Color|2
+$--color-text-primary: #333333;
+/// color|1|Font Color|2
+$--color-text-regular: #606266;
+/// color|1|Font Color|2
+$--color-text-secondary: #909399;
+/// color|1|Font Color|2
+$--color-text-placeholder: #C0C4CC;
+
+
+/* button */
+$--button-hover-tint-percent: 0;
+
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";

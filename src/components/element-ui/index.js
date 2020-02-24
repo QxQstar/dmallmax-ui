@@ -78,8 +78,8 @@ import DmTooltip from './tooltip.vue'
 import DmTransfer from './transfer.vue'
 import DmTree from './tree.vue'
 import DmUpload from './upload.vue'
-
-
+import '../../theme/element-variables.scss'
+import '../../styles/components/index.scss'
 const components = {
   DmAlert: DmAlert,
   DmAside: DmAside,

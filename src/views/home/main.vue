@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <dm-button
-      type="primary"
-      size="mini"
-    >
-      ddd
-    </dm-button>
-  </div>
+  <div>home</div>
 </template>
 
 <script>
@@ -15,11 +8,6 @@
         return {}
     },
     created() {
-      this.$message.success('rrr')
     }
   }
 </script>
-
-<style scoped>
-
-</style>

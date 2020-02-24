@@ -1,0 +1,17 @@
+@import "../../theme/element-variables";
+.el-button--primary.is-plain{
+  border-color: $--color-primary !important; ;
+  &:hover{
+    background-color: $--color-primary-light-9 !important;
+    color: $--color-primary !important;
+    box-shadow: 1px 1px 3px $--color-primary-light-2;
+  }
+}
+
+.el-button--default{
+  &:hover{
+    background-color: $--color-white !important;
+    border-color: $--border-color-base !important;
+    color: $--color-text-regular !important;
+  }
+}

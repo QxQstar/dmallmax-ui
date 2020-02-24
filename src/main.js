@@ -6,6 +6,8 @@ import './styles/index.less'
 // import './../dist/DMALLMAX.css'
 // import DMUI from './../dist/DMALLMAX.common'
 import DMUI from './components/element-ui/index'
+
+
 Vue.use(DMUI)
 
 Vue.config.productionTip = false
