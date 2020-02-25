@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <dm-status-filter
+      :conf="conf"
+    />
+  </div>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        conf:{
+          list:[{
+            status_name:'ff',
+            status:'',
+            total:2
+          },
+            {
+              status_name:'ff55',
+              status:'3',
+              total:2
+            }
+          ],
+          props:{
+            label:'status_name',
+            num:'total',
+            key:'status'
+          },
+        }
+      }
+    }
+  }
+</script>

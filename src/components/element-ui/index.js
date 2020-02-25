@@ -78,7 +78,9 @@ import DmTooltip from './tooltip.vue'
 import DmTransfer from './transfer.vue'
 import DmTree from './tree.vue'
 import DmUpload from './upload.vue'
+import DmStatusFilter from './status-filter.vue'
 import '../../styles/components/index.scss'
+
 const components = {
   DmAlert: DmAlert,
   DmAside: DmAside,
@@ -155,7 +157,8 @@ const components = {
   DmTooltip: DmTooltip,
   DmTransfer: DmTransfer,
   DmTree: DmTree,
-  DmUpload: DmUpload
+  DmUpload: DmUpload,
+  DmStatusFilter:DmStatusFilter
 }
 
 function install(Vue,opts = {}) {
@@ -264,5 +267,6 @@ export default {
   DmTooltip,
   DmTransfer,
   DmTree,
-  DmUpload
+  DmUpload,
+  DmStatusFilter
 }
