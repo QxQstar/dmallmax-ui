@@ -1,0 +1,14 @@
+@import "../../theme/reset-variables";
+.el-link.el-link--primary{
+  &,
+  &:hover{
+    color: $--link-color;
+  }
+}
+
+.el-link.el-link--default{
+  &,
+  &:hover{
+    color: $--color-text-regular;
+  }
+}
