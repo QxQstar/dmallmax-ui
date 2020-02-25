@@ -79,6 +79,8 @@ import DmTransfer from './transfer.vue'
 import DmTree from './tree.vue'
 import DmUpload from './upload.vue'
 import DmStatusFilter from './status-filter.vue'
+import DmSearchBox from './search-box.vue'
+
 import '../../styles/components/index.scss'
 
 const components = {
@@ -158,7 +160,8 @@ const components = {
   DmTransfer: DmTransfer,
   DmTree: DmTree,
   DmUpload: DmUpload,
-  DmStatusFilter:DmStatusFilter
+  DmStatusFilter:DmStatusFilter,
+  DmSearchBox:DmSearchBox
 }
 
 function install(Vue,opts = {}) {
@@ -268,5 +271,6 @@ export default {
   DmTransfer,
   DmTree,
   DmUpload,
-  DmStatusFilter
+  DmStatusFilter,
+  DmSearchBox
 }

@@ -1,0 +1,17 @@
+.dm-elem--no-scale {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.dm-elem--1x{
+  flex: 1;
+}
+.dm-elem--2x{
+  flex: 2;
+}
+.dm-elem--flex{
+  display: flex;
+}
+.dm-elem--inline-block{
+  display: inline-block;
+}

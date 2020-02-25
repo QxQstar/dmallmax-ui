@@ -1,7 +1,7 @@
 <template>
   <div class="dm-status-filter">
     <dm-link
-      v-for="(item) in conf.list"
+      v-for="(item) in list"
       :key="item[props.key]"
       class="dm-status-filter__link"
       :type="activeStatus == item[props.key] ? 'primary':undefined"
@@ -20,12 +20,17 @@
         type:Boolean,
         default:false
       },
+      list:{
+        type:Array,
+        default(){
+          return []
+        }
+      },
       conf:{
         type:Object,
         default() {
           return {
             key:'status',
-            list:[],
             props:{
               label:'status_name',
               num:'total',
