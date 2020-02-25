@@ -2,6 +2,12 @@
   import  { Button }  from 'element-ui'
   export default {
     name:'ElButton',
-    extends:Button
+    extends:Button,
+    props:{
+      size:{
+        type:String,
+        default:'small'
+      }
+    }
   }
 </script>

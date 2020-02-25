@@ -163,7 +163,7 @@ function install(Vue,opts = {}) {
     Vue.component(key,components[key])
   })
   Vue.prototype.$DMALLMAX = {
-    size: opts.size || '',
+    size: opts.size || 'small',
     zIndex: opts.zIndex || 2000
   };
   Vue.use(DmLoading.directive);

@@ -2,6 +2,12 @@
   import { DatePicker } from 'element-ui'
   export default {
     name:'ElDatePicker',
-    extends:DatePicker
+    extends:DatePicker,
+    props:{
+      size:{
+        type:String,
+        default:'small'
+      }
+    }
   }
 </script>

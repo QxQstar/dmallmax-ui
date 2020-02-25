@@ -13,8 +13,17 @@
   &:hover,
   &:focus{
     background-color: $--color-white !important;
-    border-color: $--border-color-base !important;
-    color: $--color-text-regular !important;
+    border-color: $--border-color-base;
+    color: $--color-text-regular;
+  }
+  &.is-plain{
+    border-color:$--color-primary;
+    color: $--color-primary;
+    &:hover,
+    &:focus{
+      border-color:$--color-primary;
+      color: $--color-primary;
+    }
   }
 }
 
