@@ -1,0 +1,6 @@
+@import "../../theme/reset-variables";
+.el-breadcrumb__inner.is-link,
+.el-breadcrumb__inner a{
+  color: $--color-primary;
+}
+
