@@ -177,8 +177,6 @@
           }
         }).then((content) => {
           this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
-        },(err) => {
-          this.$message.error(err.msg || '网络错误');
         })
       }
     }
