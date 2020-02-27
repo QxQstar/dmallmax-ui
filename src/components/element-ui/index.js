@@ -76,10 +76,12 @@ import DmTimelineItem from './timeline-item.vue'
 import DmTimeline from './timeline.vue'
 import DmTooltip from './tooltip.vue'
 import DmTransfer from './transfer.vue'
-import DmTree from './tree.vue'
+import DmTree from './tree/src/tree.vue'
 import DmUpload from './upload.vue'
 import DmStatusFilter from './status-filter.vue'
 import DmSearchBox from './search-box.vue'
+import DmTableList from './table-list/main.vue'
+import searchQuery from './table-list/query.js'
 
 import '../../styles/components/index.scss'
 
@@ -161,7 +163,8 @@ const components = {
   DmTree: DmTree,
   DmUpload: DmUpload,
   DmStatusFilter:DmStatusFilter,
-  DmSearchBox:DmSearchBox
+  DmSearchBox:DmSearchBox,
+  DmTableList:DmTableList
 }
 
 function install(Vue,opts = {}) {
@@ -170,7 +173,8 @@ function install(Vue,opts = {}) {
   })
   Vue.prototype.$DMALLMAX = {
     size: opts.size || 'small',
-    zIndex: opts.zIndex || 2000
+    zIndex: opts.zIndex || 2000,
+    searchQuery:searchQuery(Vue)
   };
   Vue.use(DmLoading.directive);
 
@@ -181,6 +185,7 @@ function install(Vue,opts = {}) {
   Vue.prototype.$prompt = DmMessageBox.prompt;
   Vue.prototype.$notify = DmNotification;
   Vue.prototype.$message = DmMessage;
+
 }
 
 /* istanbul ignore if */
@@ -272,5 +277,6 @@ export default {
   DmTree,
   DmUpload,
   DmStatusFilter,
-  DmSearchBox
+  DmSearchBox,
+  DmTableList
 }

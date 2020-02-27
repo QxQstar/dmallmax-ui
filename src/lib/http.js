@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { logout } from '@/lib/account.js'
 import Vue from 'vue';
 import router from '@/router';
 import QS from 'qs';
@@ -29,11 +28,7 @@ http.interceptors.response.use(function (response) {
   if(resData.ret + '' === '0') { // 请求成功
     return resData.content
   } else if(['50001', '100021'].indexOf(resData.ret + '') > -1) { // 登录失效
-    Vue.prototype.$alert(resData.msg || '登录已失效，请重新登录!!!',{
-      callback() {
-        logout();
-      }
-    })
+    Vue.prototype.$alert(resData.msg || '登录已失效，请重新登录!!!')
     return Promise.reject(resData);
   } else if(resData.ret  === -20000000) { // 提示修改密码
     Vue.prototype.$alert(resData.msg || '为了您的账号安全，请及时修改密码',{

@@ -217,6 +217,7 @@
       //点击搜索
       handleSearch() {
         this.$emit('handleSearch', this.searchModel);
+        this.$DMALLMAX.searchQuery.changeSearchParams(this.searchModel)
       },
       //点击重置
       handleReset() {
