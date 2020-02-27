@@ -10,9 +10,9 @@
     border-bottom-color: transparent;
   }
   .el-table__row:nth-child(odd){
-    background-color: $__table-stripe_background-color;
+    background-color: $--table-stripe_background-color;
     &:hover{
-      background-color: $__table-stripe_background-color !important;
+      background-color: $--table-stripe_background-color !important;
     }
 
   }

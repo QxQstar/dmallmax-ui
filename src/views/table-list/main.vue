@@ -11,7 +11,12 @@
     data(){
       return {
         tableConf:{
-          dataUrl: 'http://back.saas.dmallmax.com/account/manage/getlist',
+          dataResource:{
+            list:[{
+              uid:'3344',
+            }],
+            total:1
+          },
           thead:[
             {
               value:'账号ID',

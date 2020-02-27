@@ -1,5 +1,11 @@
 <template>
   <div class="dm-table-list">
+    <div
+      v-if="$slots.title"
+      class="dm-table-list-header"
+    >
+      <slot name="title" />
+    </div>
     <dm-table
       v-if="dataResource"
       ref="DmTableList"
@@ -58,6 +64,8 @@
   </div>
 </template>
 <script>
+  import { param } from '@/lib/tools'
+
   const defaultConfig = {
     // 接口地址
     dataUrl: null,
@@ -66,7 +74,7 @@
       list:[],
       total:0
     },
-    // 当页面上有 search-box 或者 status-filter 时不用传 defaultParams
+    // search-box 和 status-filter 之外的 params
     defaultParams: {},
     // 表头
     thead:[
@@ -163,19 +171,21 @@
       this.fetchData();
     },
     methods:{
+      getUrl(address,obj){
+        return address + '?' + param(obj)
+      },
       fetchData(){
         if(!this.resultTableConf.dataUrl) {
           return false
         }
-        this.http({
-          url:this.resultTableConf.dataUrl,
-          param:{
-            ...this.resultTableConf.defaultParams,
-            ...this.$DMALLMAX.searchQuery.query,
-            rn:this.resultTableConf.pages.size,
-            pn:this.pn
-          }
-        }).then((content) => {
+        const url = this.getUrl(this.resultTableConf.dataUrl,{
+          ...this.resultTableConf.defaultParams,
+          ...this.$DMALLMAX.searchQuery.query,
+          rn:this.resultTableConf.pages.size,
+          pn:this.pn
+        });
+
+        this.http(url).then((content) => {
           this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
         })
       }

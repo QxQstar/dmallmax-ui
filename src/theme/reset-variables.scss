@@ -15,6 +15,11 @@ $--color-text-secondary: #909399;
 /// color|1|Font Color|2
 $--color-text-placeholder: #C0C4CC;
 
+// margin
+
+$--area-horizontal-gap:20px;
+$--area-vertical-gap:20px;
+
 /* Typography */
 $--font-size-large: 16px;
 $--font-size-medium: 14px;
@@ -43,14 +48,14 @@ $--table-header-font-color:$--color-text-primary;
 $--table-font-color:$--color-text-primary;
 $--table-row-hover-background-color:transparent;
 $--table-current-row-background-color:$--color-white;
-$__table-stripe_background-color:#f8f8f8;
+$--table-stripe_background-color:#f8f8f8;
 
 
 /* status-filter */
-$__status-filter-padding-horizontal:10px;
+$--status-filter-padding-horizontal:10px;
 
 /* search-box */
-$__search-box-margin-horizontal:10px;
+$--search-box-margin-horizontal:10px;
 
 /* icon */
 $--icon-color:$--color-text-secondary;

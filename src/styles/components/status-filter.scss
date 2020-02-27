@@ -1,7 +1,7 @@
 @import "../../theme/reset-variables";
 .dm-status-filter__link{
   position: relative;
-  padding: 0 $__status-filter-padding-horizontal / 2 ;
+  padding: 0 $--status-filter-padding-horizontal / 2 ;
   border-right:1px solid $--link-color;
   &:last-child {
     border-right: none;
