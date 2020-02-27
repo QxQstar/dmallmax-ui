@@ -78,9 +78,11 @@ import DmTooltip from './tooltip.vue'
 import DmTransfer from './transfer.vue'
 import DmTree from './tree/src/tree.vue'
 import DmUpload from './upload.vue'
+import DmDialog from './dialog.vue'
 import DmStatusFilter from './status-filter.vue'
 import DmSearchBox from './search-box.vue'
 import DmTableList from './table-list/main.vue'
+import DmBatchInput from './batch-input.vue'
 import searchQuery from './table-list/query.js'
 
 import '../../styles/components/index.scss'
@@ -154,6 +156,7 @@ const components = {
   DmTableColumn: DmTableColumn,
   DmTabs: DmTabs,
   DmTag: DmTag,
+  DmDialog:DmDialog,
   DmTimePicker: DmTimePicker,
   DmTimeSelect: DmTimeSelect,
   DmTimelineItem: DmTimelineItem,
@@ -164,7 +167,8 @@ const components = {
   DmUpload: DmUpload,
   DmStatusFilter:DmStatusFilter,
   DmSearchBox:DmSearchBox,
-  DmTableList:DmTableList
+  DmTableList:DmTableList,
+  DmBatchInput:DmBatchInput
 }
 
 function install(Vue,opts = {}) {
@@ -275,8 +279,10 @@ export default {
   DmTooltip,
   DmTransfer,
   DmTree,
+  DmDialog,
   DmUpload,
   DmStatusFilter,
   DmSearchBox,
-  DmTableList
+  DmTableList,
+  DmBatchInput
 }

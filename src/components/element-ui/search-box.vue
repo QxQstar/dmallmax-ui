@@ -19,6 +19,12 @@
           :suffix-icon="item.icon"
           :placeholder="item.ph || '请输入搜索项'"
         />
+        <!--批量输入-->
+        <dm-batch-input
+          v-if="item.type == 'batchInput'"
+          v-model="searchModel[item.key]"
+          :placeholder="item.ph || '请输入'"
+        />
         <!--选择框-->
         <dm-select
           v-if="item.type == 'select'"

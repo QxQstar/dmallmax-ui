@@ -97,6 +97,11 @@
               key: 'key',
               type: 'input',
               ph: '按货损单号/订单号/下单账号/客户名称/相关司机'
+            },
+            {
+              key:'mulit',
+              type:'batchInput',
+              ph:'多个'
             }
           ],
           selectInfo:{}
