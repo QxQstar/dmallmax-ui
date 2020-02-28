@@ -151,22 +151,21 @@
             selectInfo:{}
           }
         }
-      },
-      //初始化搜索配置
-      query: {
-        type: Object,
-        default(){
-          return {}
-        }
       }
     },
     data() {
       return {
         searchModel: {},
         initSearchModel: {},       //初始化参数model，用于reset后赋值
-        searchConf: '',            //搜索框配置
-        selectInfo: '',            //搜索选项
         daterangePickerOptions:{}
+      }
+    },
+    computed:{
+      searchConf(){
+        return this.searchData.searchConf || []
+      },
+      selectInfo(){
+        return this.searchData.selectInfo || {}
       }
     },
     watch: {
@@ -187,9 +186,6 @@
       }
     },
     created() {
-      for(let key in this.searchData) {
-        this[key] = this.searchData[key];
-      }
       if(this.searchConf && this.searchConf.length > 0) {
         this.getInitParams();
       }
@@ -199,7 +195,7 @@
       changeDateRangeParam(query){
         let daterange=[];
         this.searchConf.forEach(item=>{
-          if(item.type=='daterange'){
+          if(item.type === 'daterange'){
             daterange.push(item);
           }
         })
@@ -212,13 +208,12 @@
 
       },
       getInitParams() {
+        const searchParam = {};
         this.searchConf.forEach(item => {
-          this.searchModel[item.key] = item.default;
-        })
-        let obj = {...this.searchModel, ...this.query};
-        this.$set(this, 'searchModel', obj);
-        //深度clone，否则searchModel改变会导致initSearchModel修改
-        this.initSearchModel = {...obj};
+          searchParam[item.key] = item.default;
+        });
+        this.searchModel = searchParam;
+        this.initSearchModel = {...searchParam};
       },
       //点击搜索
       handleSearch() {

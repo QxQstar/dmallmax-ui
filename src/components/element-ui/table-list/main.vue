@@ -11,6 +11,7 @@
       ref="DmTableList"
       :data="dataResource.list || []"
       style="width: 100%"
+      v-bind="$attrs"
       v-on="$listeners"
     >
       <template v-for="(col,index) in resultTableConf.thead">
@@ -98,6 +99,10 @@
     },
     setData(content){
       return content
+    },
+    // 自定义参数
+    customParam(param){
+      return param
     }
   };
   export default {
@@ -178,12 +183,17 @@
         if(!this.resultTableConf.dataUrl) {
           return false
         }
-        const url = this.getUrl(this.resultTableConf.dataUrl,{
+        const paramObj = {
           ...this.resultTableConf.defaultParams,
           ...this.$DMALLMAX.searchQuery.query,
           rn:this.resultTableConf.pages.size,
           pn:this.pn
-        });
+        };
+
+        const url = this.getUrl(
+          this.resultTableConf.dataUrl,
+          this.resultTableConf.customParam ? this.resultTableConf.customParam(paramObj) : paramObj
+        );
 
         this.http(url).then((content) => {
           this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
