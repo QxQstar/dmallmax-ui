@@ -1,4 +1,7 @@
 @import "../../theme/reset-variables";
+.dm-status-filter{
+  margin-bottom: $--area-vertical-gap;
+}
 .dm-status-filter__link{
   position: relative;
   padding: 0 $--status-filter-padding-horizontal / 2 ;

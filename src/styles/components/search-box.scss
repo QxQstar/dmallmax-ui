@@ -1,4 +1,7 @@
 @import "./../../theme/element-variables";
+.dm-search-box{
+  margin-bottom: $--area-vertical-gap;
+}
 .dm-search-box__item{
   margin-right: $--search-box-margin-horizontal;
   margin-bottom: $--search-box-margin-vertical;
