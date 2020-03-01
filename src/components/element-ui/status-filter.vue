@@ -63,7 +63,7 @@
         this.activeStatus = item[this.props.key];
         let obj = {};
         obj[this.conf.key || 'status'] = this.activeStatus;
-        this.$emit('handleChange', obj);
+        this.$emit('change', obj);
         this.$DMALLMAX.searchQuery.changeStatusParams(obj)
         if(this.onTime) {
           const search = getQueryObject();

@@ -23,6 +23,7 @@
 .dm-page-title{
   color: $--color-text-primary;
   margin: $--area-vertical-gap 0;
+  font-weight: bold;
 }
 
 .dm-page-title--large{
@@ -31,4 +32,8 @@
 
 .dm-page-title--small{
   font-size: $--font-size-medium;
+}
+
+.dm-block--r{
+  float: right;
 }

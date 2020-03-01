@@ -83,6 +83,7 @@ import DmStatusFilter from './status-filter.vue'
 import DmSearchBox from './search-box.vue'
 import DmTableList from './table-list/main.vue'
 import DmBatchInput from './batch-input.vue'
+import DmTopChoose from './top-choose.vue'
 import searchQuery from './table-list/query.js'
 
 import '../../styles/components/index.scss'
@@ -168,7 +169,8 @@ const components = {
   DmStatusFilter:DmStatusFilter,
   DmSearchBox:DmSearchBox,
   DmTableList:DmTableList,
-  DmBatchInput:DmBatchInput
+  DmBatchInput:DmBatchInput,
+  DmTopChoose:DmTopChoose
 }
 
 function install(Vue,opts = {}) {
@@ -284,5 +286,6 @@ export default {
   DmStatusFilter,
   DmSearchBox,
   DmTableList,
-  DmBatchInput
+  DmBatchInput,
+  DmTopChoose
 }

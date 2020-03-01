@@ -1,6 +1,7 @@
 @import "../../theme/reset-variables";
 .dm-status-filter{
   margin-bottom: $--area-vertical-gap;
+  line-height: 1;
 }
 .dm-status-filter__link{
   position: relative;
@@ -8,5 +9,8 @@
   border-right:1px solid $--link-color;
   &:last-child {
     border-right: none;
+  }
+  &:first-child{
+    padding-left: 0;
   }
 }

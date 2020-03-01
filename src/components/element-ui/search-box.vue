@@ -217,13 +217,13 @@
       },
       //点击搜索
       handleSearch() {
-        this.$emit('handleSearch', this.searchModel);
+        this.$emit('search', this.searchModel);
         this.$DMALLMAX.searchQuery.changeSearchParams(this.searchModel)
       },
       //点击重置
       handleReset() {
         this.searchModel = {...this.initSearchModel};
-        this.$emit('handleReset');
+        this.$emit('reset');
         this.handleSearch()
       }
     },
