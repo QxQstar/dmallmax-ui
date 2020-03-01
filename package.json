@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name DMALLMAX ./src/components/element-ui/index.js",
     "lint": "vue-cli-service lint",
+    "report": "vue-cli-service build --mode development --report",
     "pub": "npm run build && npm publish --access public",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
