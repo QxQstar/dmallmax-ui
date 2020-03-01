@@ -1,6 +1,5 @@
 export default function searchQuery(Vue) {
   return new Vue({
-    template:'',
     data(){
       return {
         // status-filter 中的参数
