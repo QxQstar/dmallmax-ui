@@ -172,14 +172,7 @@
       searchModel: {
         handler(val) {
           // 修改传入进来的参数
-          let query = {...val};
-          let searchQuery = {};
-          this.changeDateRangeParam(query);
-          for(let key in query) {
-            if(query[key]) {
-              searchQuery[key] = query[key];
-            }
-          }
+          const searchQuery = this.getQuery(val)
           this.$emit('update:query', searchQuery)
         },
         deep: true // 深度监听
@@ -192,6 +185,17 @@
 
     },
     methods: {
+      getQuery(val){
+        let query = {...val};
+        let searchQuery = {};
+        this.changeDateRangeParam(query);
+        for(let key in query) {
+          if(query[key]) {
+            searchQuery[key] = query[key];
+          }
+        }
+        return searchQuery;
+      },
       changeDateRangeParam(query){
         let daterange=[];
         this.searchConf.forEach(item=>{
@@ -200,6 +204,7 @@
           }
         })
         daterange.forEach(item=>{
+
           if(query[item.key]&& Object.prototype.toString.call(query[item.key])== '[object Array]'){
             query[item.key1]=query[item.key][1];
             query[item.key]=query[item.key][0];
@@ -217,8 +222,10 @@
       },
       //点击搜索
       handleSearch() {
-        this.$emit('search', this.searchModel);
-        this.$DMALLMAX.searchQuery.changeSearchParams(this.searchModel)
+        const searchQuery = this.getQuery(this.searchModel);
+        this.$emit('search', searchQuery);
+
+        this.$DMALLMAX.searchQuery.changeSearchParams(searchQuery)
       },
       //点击重置
       handleReset() {
