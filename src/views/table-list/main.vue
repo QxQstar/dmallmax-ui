@@ -15,7 +15,7 @@
           selectableMultiPage:true,
           unixId:'uid',
           pages:{
-            size:1
+            size:10
           },
           dataResource:{
             list:[{

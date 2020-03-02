@@ -9,11 +9,19 @@
   th.is-leaf{
     border-bottom-color: transparent;
   }
-  .el-table__row:nth-child(odd){
+  .el-table__row:nth-child(2n + 1){
     background-color: $--table-stripe_background-color;
     &:hover{
       background-color: $--table-stripe_background-color !important;
     }
-
+  }
+  .el-table__row:nth-child(2n){
+    background-color: #fff;
+    &:hover{
+      background-color: #fff !important;
+    }
+  }
+  .el-table__empty-block{
+    border-top: 1px solid $--table-border-color;
   }
 }
