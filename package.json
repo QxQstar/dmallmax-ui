@@ -13,6 +13,7 @@
   "dependencies": {
     "clipboard": "2.0.4",
     "core-js": "^3.6.4",
+    "dmallmax-ui": "^0.1.0",
     "element-theme": "^2.0.1",
     "element-theme-chalk": "^2.13.0",
     "element-ui": "^2.13.0",

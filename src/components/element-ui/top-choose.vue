@@ -1,7 +1,7 @@
 <template>
   <div class="dm-top-choose">
-    <div class="dm-page-title dm-page-title--large">
-      {{ config.title }}
+    <div class="dm-page-title dm-page-title--large dm-block--overflow-hidden">
+      <slot>{{ config.title }}</slot>
       <div
         v-if="config.createname || $slots.otherBtn"
         class="dm-top-choose__btns dm-block--r"
@@ -31,7 +31,9 @@
     props:{
       config:{
         type:Object,
-        required:true
+        default(){
+          return {}
+        }
       }
     },
     data(){

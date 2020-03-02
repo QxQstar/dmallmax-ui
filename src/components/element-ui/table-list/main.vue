@@ -21,13 +21,12 @@
           v-if="resultTableConf.filters[col.key] || (col.type === 'operate' && resultTableConf.operateFilter)"
           :key="index"
           :type="col.type"
-          :index="col.index"
           :label="col.value"
           :prop="col.key || ''"
-          :min-width="col.minWidth"
+          :min-width="col.minWidth||'55px'"
           :width="col.width"
-          :fixed="col.fixed"
-          :sortable="col.sortable"
+          :fixed="col.fixed || false"
+          :sortable="col.sortable||false"
         >
           <template
             slot-scope="scope"
@@ -44,13 +43,12 @@
           v-else
           :key="index"
           :type="col.type"
-          :index="col.index"
           :label="col.value"
           :prop="col.key || ''"
-          :min-width="col.minWidth"
+          :min-width="col.minWidth||'55px'"
           :width="col.width"
-          :fixed="col.fixed"
-          :sortable="col.sortable"
+          :fixed="col.fixed||false"
+          :sortable="col.sortable||false"
         />
       </template>
     </dm-table>

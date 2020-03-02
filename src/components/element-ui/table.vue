@@ -3,15 +3,15 @@
   export default {
     name:'ElTable',
     extends:Table,
-    props:{
-      border:{
-        type:Boolean,
-        default:true
-      },
-      size:{
-        type:String,
-        default: 'small'
-      }
-    }
+    // props:{
+    //   border:{
+    //     type:Boolean,
+    //     default:true
+    //   },
+    //   size:{
+    //     type:String,
+    //     default: 'small'
+    //   }
+    // }
   }
 </script>
