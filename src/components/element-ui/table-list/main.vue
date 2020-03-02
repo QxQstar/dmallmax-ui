@@ -12,11 +12,13 @@
       :data="dataResource.list || []"
       style="width: 100%"
       v-bind="$attrs"
-      v-on="$listeners"
+      v-on="listeners"
+      @select-all="handleSelectionChange"
+      @select="handleSelectionChange"
     >
       <template v-for="(col,index) in resultTableConf.thead">
         <dm-table-column
-          v-if="resultTableConf.filters[col.key] || (col.colType === 'operate' && resultTableConf.operateFilter)"
+          v-if="resultTableConf.filters[col.key] || (col.type === 'operate' && resultTableConf.operateFilter)"
           :key="index"
           :type="col.type"
           :index="col.index"
@@ -26,13 +28,12 @@
           :width="col.width"
           :fixed="col.fixed"
           :sortable="col.sortable"
-          :ddd="col.key"
         >
           <template
             slot-scope="scope"
           >
             <v-operation
-              :render-func="col.colType === 'operate' && resultTableConf.operateFilter ? resultTableConf.operateFilter :resultTableConf.filters[col.key]"
+              :render-func="col.type === 'operate' && resultTableConf.operateFilter ? resultTableConf.operateFilter :resultTableConf.filters[col.key]"
               :row="scope.row"
               :index="scope.$index"
               :col="col.key"
@@ -50,7 +51,6 @@
           :width="col.width"
           :fixed="col.fixed"
           :sortable="col.sortable"
-          :ddd="col.key"
         />
       </template>
     </dm-table>
@@ -75,6 +75,10 @@
       list:[],
       total:0
     },
+    // 是否跨页多选
+    selectableMultiPage:false,
+    // 在选择行时唯一标识行数据的字段
+    unixId:'',
     // search-box 和 status-filter 之外的 params
     defaultParams: {},
     // 表头
@@ -155,11 +159,16 @@
           ...this.tableConf
         },
         // table 数据
-        dataResource:this.tableConf.dataResource
+        dataResource:'',
+        chooseRows:[],
+        listeners:{}
       }
     },
 
     computed:{
+      chooseRowIds(){
+        return this.chooseRows.map(row => row[this.resultTableConf.unixId])
+      },
       pn() {
         return (this.current - 1 ) * this.resultTableConf.pages.size
       }
@@ -173,16 +182,39 @@
       this.$DMALLMAX.searchQuery.resetData()
     },
     created(){
+      const resetEvent = ['selection-change'];
+      Object.keys(this.$listeners).forEach(key => {
+        if(resetEvent.indexOf(key) < 0) {
+          this.listeners[key] = this.$listeners[key]
+        }
+      });
       this.fetchData();
     },
     methods:{
+      handleSelectionChange(rows){
+        rows.forEach(row => {
+          if(this.chooseRowIds.indexOf(row[this.resultTableConf.unixId]) < 0){
+            this.chooseRows.push(row);
+          }
+        });
+
+        for(let i = this.chooseRows.length - 1;i >= 0;i--){
+          const row = this.chooseRows[i];
+          // 是否是当前页的数据
+          const isCurPage = this.dataResource.list.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
+                 // 是否被选中
+          const isSelect = rows.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
+          if(isCurPage && !isSelect) {
+            this.chooseRows.splice(i,1);
+          }
+        }
+        this.$emit('selection-change',this.chooseRows)
+      },
       getUrl(address,obj){
         return address + '?' + param(obj)
       },
-      fetchData(){
-        if(!this.resultTableConf.dataUrl) {
-          return false
-        }
+      // 从接口中获取数据
+      httpData(){
         const paramObj = {
           ...this.resultTableConf.defaultParams,
           ...this.$DMALLMAX.searchQuery.query,
@@ -195,10 +227,47 @@
           this.resultTableConf.customParam ? this.resultTableConf.customParam(paramObj) : paramObj
         );
 
-        this.http(url).then((content) => {
-          this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
+        return this.http(url)
+      },
+      // 本地分页
+      getData(){
+        return new Promise((resolve) => {
+          const list = (this.resultTableConf.dataResource.list||[]).slice(this.pn,this.resultTableConf.pages.size + this.pn);
+          resolve({
+            list:list,
+            total:this.resultTableConf.dataResource.total || 0
+          })
         })
-      }
+      },
+      // 设置跨页选中
+      setMultiPageSelect(){
+        this.dataResource.list.forEach(row => {
+          if(this.chooseRowIds.indexOf(row[this.resultTableConf.unixId]) > -1) {
+            this.$refs.DmTableList && this.$refs.DmTableList.toggleRowSelection(row);
+          }
+        })
+      },
+      fetchData(){
+        let fn = '';
+        if(this.resultTableConf.dataUrl) {
+          fn = this.httpData()
+        } else {
+          fn = this.getData();
+        }
+
+        fn
+          .then((content) => {
+          this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
+          return this.dataResource;
+        })
+          .then(() => {
+            this.$nextTick(() => {
+              if(this.resultTableConf.selectableMultiPage) {
+                this.setMultiPageSelect();
+              }
+            })
+          })
+      },
     }
   }
 </script>
