@@ -1,6 +1,6 @@
 {
   "name": "dmallmax-ui",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "dist/DMALLMAX.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
