@@ -232,7 +232,12 @@
       // 本地分页
       getData(){
         return new Promise((resolve) => {
-          const list = (this.resultTableConf.dataResource.list||[]).slice(this.pn,this.resultTableConf.pages.size + this.pn);
+          let list = [];
+          if(this.resultTableConf.paging) {
+            list = (this.resultTableConf.dataResource.list||[]).slice(this.pn,this.resultTableConf.pages.size + this.pn);
+          } else {
+            list = (this.resultTableConf.dataResource.list||[])
+          }
           resolve({
             list:list,
             total:this.resultTableConf.dataResource.total || 0
