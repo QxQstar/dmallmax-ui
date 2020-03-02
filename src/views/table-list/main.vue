@@ -2,6 +2,7 @@
   <dm-table-list
     :http="http"
     :table-conf="tableConf"
+    @selection-change="handleSelectionChange"
   />
 </template>
 <script>
@@ -11,20 +12,31 @@
     data(){
       return {
         tableConf:{
+          selectableMultiPage:true,
+          unixId:'uid',
+          pages:{
+            size:1
+          },
           dataResource:{
             list:[{
               uid:'3344',
+            },{
+              uid:'44',
             }],
-            total:1
+            total:2
           },
           thead:[
+            {
+              type:'selection',
+              width:55
+            },
             {
               value:'账号ID',
               key:'uid'
             },
             {
               value:'操作',
-              colType:'operate'
+              type:'operate'
             }
           ],
           operateFilter(h){
@@ -38,6 +50,11 @@
           }
         },
         http:http
+      }
+    },
+    methods:{
+      handleSelectionChange(roe){
+        console.log(roe,'roe')
       }
     }
   }
