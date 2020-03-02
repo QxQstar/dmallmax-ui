@@ -2,6 +2,7 @@
   <div>
     <dm-search-box
       :search-data="searchData"
+      @search="handleSearch"
     />
   </div>
 </template>
@@ -15,7 +16,8 @@
               key:'date_begin',
               type:'daterange',
               label:'',
-              key1:'date_end'
+              key1:'date_end',
+              default:['2019-12-1','2019-12-2']
             },
             {
               key: 'checked_by',
@@ -106,6 +108,11 @@
           ],
           selectInfo:{}
         }
+      }
+    },
+    methods:{
+      handleSearch(obj){
+        console.log(obj)
       }
     }
   }
