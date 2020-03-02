@@ -1,3 +1,13 @@
+## [0.1.1](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.0...v0.1.1) (2020-03-02)
+
+
+### Features
+
+* 修改 table 的样式 ([72366e1](https://github.com/QxQstar/dmallmax-ui/commit/72366e120b5102f314c3377ce93899ef54610e95))
+* 去掉 table 组件的 props ([5ee4c98](https://github.com/QxQstar/dmallmax-ui/commit/5ee4c9897a6a4a0a04355360256887edde630033))
+
+
+
 # [0.1.0](https://github.com/QxQstar/dmallmax-ui/compare/v0.0.3...v0.1.0) (2020-03-02)
 
 
