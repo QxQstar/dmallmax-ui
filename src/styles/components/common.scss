@@ -40,3 +40,12 @@
 .dm-block--overflow-hidden{
   overflow: hidden;
 }
+
+.dm-text--clear{
+  &:after{
+    content: '';
+    display: block;
+    width: 0;
+    clear: both;
+  }
+}

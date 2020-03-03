@@ -1,6 +1,6 @@
 <template>
   <div class="dm-top-choose">
-    <div class="dm-page-title dm-page-title--large dm-block--overflow-hidden">
+    <div class="dm-page-title dm-page-title--large dm-text--clear">
       <slot>{{ config.title }}</slot>
       <div
         v-if="config.createname || $slots.otherBtn"

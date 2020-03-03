@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -73,6 +74,7 @@
 </template>
 
 <script type="text/jsx">
+  /*eslint-disable*/
   import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
   import ElCheckbox from 'element-ui/packages/checkbox';
   import emitter from 'element-ui/src/mixins/emitter';
