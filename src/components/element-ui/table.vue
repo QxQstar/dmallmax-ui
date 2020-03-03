@@ -2,16 +2,6 @@
   import { Table } from 'element-ui'
   export default {
     name:'ElTable',
-    extends:Table,
-    // props:{
-    //   border:{
-    //     type:Boolean,
-    //     default:true
-    //   },
-    //   size:{
-    //     type:String,
-    //     default: 'small'
-    //   }
-    // }
+    extends:Table
   }
 </script>

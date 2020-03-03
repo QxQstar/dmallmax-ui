@@ -2,12 +2,6 @@
   import { Steps } from 'element-ui'
   export default {
     name:'ElSteps',
-    extends:Steps,
-    props:{
-      finishStatus:{
-        type:String,
-        default:'success'
-      }
-    }
+    extends:Steps
   }
 </script>

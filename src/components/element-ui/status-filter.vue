@@ -4,6 +4,7 @@
       v-for="(item) in list"
       :key="item[props.key]"
       class="dm-status-filter__link"
+      :underline="false"
       :type="activeStatus == item[props.key] ? 'primary':undefined"
       @click.native="changeStatus(item)"
     >
