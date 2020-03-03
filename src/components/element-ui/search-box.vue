@@ -78,7 +78,7 @@
           v-if="item.type == 'cascader'"
           v-model="searchModel[item.key]"
           :options="selectInfo[item.key]"
-          :props="{ expandTrigger: 'hover' }"
+          :props="item.props"
         />
         <!--选择框  自带搜索url-->
         <!-- <el-select v-if="item.type == 'select_online'"
