@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import Vue from 'vue';
 import Watcher from './watcher';
 import { arrayFind } from 'element-ui/src/utils/util';

@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import './filters/common/index.js'
 import './styles/index.less'
-import './../dist/DMALLMAX.css'
+// import './../dist/DMALLMAX.css'
 // import DMUI from './../dist/DMALLMAX.common'
-import DMUI from 'dmallmax-ui'
+import DMUI from './components/element-ui/index'
+import './styles/components/index.scss'
 
 
 Vue.use(DMUI)

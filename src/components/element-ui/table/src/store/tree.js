@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { walkTreeNode, getRowIdentity } from '../util';
 
 export default {

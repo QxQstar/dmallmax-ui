@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { toggleRowStatus, getKeysMap, getRowIdentity } from '../util';
 
 export default {

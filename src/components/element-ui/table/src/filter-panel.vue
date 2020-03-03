@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <transition name="el-zoom-in-top">
     <div
       class="el-table-filter"
@@ -51,7 +52,7 @@
   import Dropdown from './dropdown';
   import ElCheckbox from 'element-ui/packages/checkbox';
   import ElCheckboxGroup from 'element-ui/packages/checkbox-group';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import ElScrollbar from './../../scrollbar.vue';
 
   export default {
     name: 'ElTableFilterPanel',

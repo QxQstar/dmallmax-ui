@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import Store from './index';
 import debounce from 'throttle-debounce/debounce';
 

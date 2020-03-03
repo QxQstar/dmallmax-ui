@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div class="el-table"
     :class="[{
       'el-table--fit': fit,
@@ -260,7 +261,10 @@
 
       stripe: Boolean,
 
-      border: Boolean,
+      border: {
+        type:Boolean,
+        default:true
+      },
 
       rowKey: [String, Function],
 
