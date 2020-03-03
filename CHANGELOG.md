@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.3...v0.1.4) (2020-03-03)
+
+
+### Features
+
+* 改变 vue 的版本 ([d9c1463](https://github.com/QxQstar/dmallmax-ui/commit/d9c1463ddb3bd0b33763d2feacc85b63e3fb2d29))
+
+
+
 ## [0.1.3](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.2...v0.1.3) (2020-03-03)
 
 
