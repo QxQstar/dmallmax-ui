@@ -1,3 +1,12 @@
+## [0.1.5](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.4...v0.1.5) (2020-03-03)
+
+
+### Features
+
+* 修改table-list ([00695c2](https://github.com/QxQstar/dmallmax-ui/commit/00695c22b5c22eeeaeb94bdd005b0221b569eae3))
+
+
+
 ## [0.1.4](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.3...v0.1.4) (2020-03-03)
 
 
