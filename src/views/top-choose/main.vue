@@ -17,6 +17,16 @@
     }"
     @statusChange="statusChange"
   >
+    <dm-breadcrumb>
+      <dm-breadcrumb-item
+        :to="{ path: '/' }"
+      >
+        ee
+      </dm-breadcrumb-item>
+      <dm-breadcrumb-item>
+        发货快
+      </dm-breadcrumb-item>
+    </dm-breadcrumb>
     <dm-button slot="otherBtn">
       导出
     </dm-button>

@@ -3,11 +3,11 @@
   export default {
     name:'ElBreadcrumb',
     extends:Breadcrumb,
-    // props:{
-    //   separatorClass:{
-    //     type:String,
-    //     default:'el-icon-arrow-right'
-    //   }
-    // }
+    props:{
+      separatorClass:{
+        type:String,
+        default:'el-icon-arrow-right'
+      }
+    }
   }
 </script>

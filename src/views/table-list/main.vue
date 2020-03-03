@@ -39,11 +39,16 @@
               type:'operate'
             }
           ],
-          operateFilter(h){
+          operateFilter(h,row,vm){
             return h('div',[
               h('dm-button',{
                 props:{
                   type:'text'
+                },
+                on:{
+                  click(){
+                    console.log(vm)
+                  }
                 }
               },'编辑')
             ])

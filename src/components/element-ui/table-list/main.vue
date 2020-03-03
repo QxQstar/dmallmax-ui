@@ -64,7 +64,7 @@
 </template>
 <script>
   import { param } from '@/lib/tools'
-
+  let vm = null;
   const defaultConfig = {
     // 接口地址
     dataUrl: null,
@@ -111,7 +111,7 @@
     components:{
       vOperation:{
         render(createElement) {
-          return this.renderFunc(createElement,this.row,this.col,this.index)
+          return this.renderFunc(createElement,this.row,vm.$parent,this.col,this.index)
         },
         props:{
           renderFunc:{
@@ -180,6 +180,7 @@
       this.$DMALLMAX.searchQuery.resetData()
     },
     created(){
+      vm = this;
       const resetEvent = ['selection-change'];
       Object.keys(this.$listeners).forEach(key => {
         if(resetEvent.indexOf(key) < 0) {
