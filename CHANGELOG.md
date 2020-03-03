@@ -1,3 +1,12 @@
+## [0.1.6](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.5...v0.1.6) (2020-03-03)
+
+
+### Features
+
+* search-box ([3f74010](https://github.com/QxQstar/dmallmax-ui/commit/3f7401084bb6229a2d6efbb07edd61fc21906a4c))
+
+
+
 ## [0.1.5](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.4...v0.1.5) (2020-03-03)
 
 
