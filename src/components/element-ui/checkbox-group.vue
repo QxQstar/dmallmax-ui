@@ -2,6 +2,12 @@
   import { CheckboxGroup } from 'element-ui'
   export default {
     name:'ElCheckboxGroup',
-    extends:CheckboxGroup
+    extends:CheckboxGroup,
+    props:{
+      size:{
+        type:String,
+        default:'small'
+      }
+    }
   }
 </script>
