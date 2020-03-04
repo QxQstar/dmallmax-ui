@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.6...v1.0.0) (2020-03-04)
+
+
+### Features
+
+* 修改 table-list 的参数 ([79ac592](https://github.com/QxQstar/dmallmax-ui/commit/79ac592d70b9663a67a3a3fd12c380ae483285ba))
+* 给组件设置默认属性 ([4d9c7db](https://github.com/QxQstar/dmallmax-ui/commit/4d9c7db4bac17e90418e274d9880353282d40ca9))
+
+
+
 ## [0.1.6](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.5...v0.1.6) (2020-03-03)
 
 
