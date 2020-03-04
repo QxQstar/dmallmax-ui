@@ -18,7 +18,7 @@
     >
       <template v-for="(col,index) in resultTableConf.thead">
         <dm-table-column
-          v-if="resultTableConf.filters[col.key] || (col.type === 'operate' && resultTableConf.operateFilter)"
+          v-if="resultTableConf.filters[col.key] || (col.type === 'operation' && resultTableConf.filters._OPERATION_)"
           :key="index"
           :type="col.type"
           :label="col.value"
@@ -32,7 +32,7 @@
             slot-scope="scope"
           >
             <v-operation
-              :render-func="col.type === 'operate' && resultTableConf.operateFilter ? resultTableConf.operateFilter :resultTableConf.filters[col.key]"
+              :render-func="col.type === 'operation' && resultTableConf.filters._OPERATION_ ? resultTableConf.filters._OPERATION_ :resultTableConf.filters[col.key]"
               :row="scope.row"
               :index="scope.$index"
               :col="col.key"
@@ -54,11 +54,11 @@
     </dm-table>
 
     <dm-pagination
-      v-if="resultTableConf.paging && dataResource"
+      v-if="resultTableConf.paging && dataResource && Number(dataResource.total)"
       :page-size="resultTableConf.pages.size"
       :total="Number(dataResource.total)"
       :current-page.sync="current"
-      @current-change="fetchData"
+      @current-change="handlePageChange"
     />
   </div>
 </template>
@@ -67,7 +67,7 @@
   let vm = null;
   const defaultConfig = {
     // 接口地址
-    dataUrl: null,
+    url: null,
     method:"GET",
     dataResource:{
       list:[],
@@ -93,7 +93,6 @@
       }
     ],
     filters:{},
-    operateFilter:null,
     // 显示分页器
     paging:true,
     pages:{
@@ -181,7 +180,8 @@
     },
     created(){
       vm = this;
-      const resetEvent = ['selection-change'];
+      // 不在 dm-table 上绑定的事件
+      const resetEvent = ['selection-change','current-change'];
       Object.keys(this.$listeners).forEach(key => {
         if(resetEvent.indexOf(key) < 0) {
           this.listeners[key] = this.$listeners[key]
@@ -190,6 +190,10 @@
       this.fetchData();
     },
     methods:{
+      handlePageChange(page){
+        this.fetchData();
+        this.$emit('current-change',this.pn,this.resultTableConf.pages.size,page)
+      },
       handleSelectionChange(rows){
         rows.forEach(row => {
           if(this.chooseRowIds.indexOf(row[this.resultTableConf.unixId]) < 0){
@@ -222,7 +226,7 @@
         };
 
         const url = this.getUrl(
-          this.resultTableConf.dataUrl,
+          this.resultTableConf.url,
           this.resultTableConf.customParam ? this.resultTableConf.customParam(paramObj) : paramObj
         );
 
@@ -253,7 +257,7 @@
       },
       fetchData(){
         let fn = '';
-        if(this.resultTableConf.dataUrl) {
+        if(this.resultTableConf.url) {
           fn = this.httpData()
         } else {
           fn = this.getData();

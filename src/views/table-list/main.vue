@@ -3,6 +3,7 @@
     :http="http"
     :table-conf="tableConf"
     @selection-change="handleSelectionChange"
+    @current-change="handlePageChange"
   />
 </template>
 <script>
@@ -36,23 +37,25 @@
             },
             {
               value:'操作',
-              type:'operate'
+              type:'operation'
             }
           ],
-          operateFilter(h,row,vm){
-            return h('div',[
-              h('dm-button',{
-                props:{
-                  type:'text'
-                },
-                on:{
-                  click(){
-                    console.log(vm)
+          filters:{
+            _OPERATION_(h,row,vm){
+              return h('div',[
+                h('dm-button',{
+                  props:{
+                    type:'text'
+                  },
+                  on:{
+                    click(){
+                      console.log(vm)
+                    }
                   }
-                }
-              },'编辑')
-            ])
-          }
+                },'编辑')
+              ])
+            }
+          },
         },
         http:http
       }
@@ -60,6 +63,9 @@
     methods:{
       handleSelectionChange(roe){
         console.log(roe,'roe')
+      },
+      handlePageChange(pn,rn,page){
+        console.log(pn,rn,page)
       }
     }
   }
