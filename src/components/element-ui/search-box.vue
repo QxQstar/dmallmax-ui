@@ -32,6 +32,7 @@
           :multiple="item.ismultiple"
           :placeholder="item.ph || '请选择'"
           filterable
+          clearable
         >
           <template
             v-if="item.options"
@@ -80,6 +81,7 @@
           v-model="searchModel[item.key]"
           :options="selectInfo[item.key]"
           filterable
+          clearable
           :props="{...item.props,...{expandTrigger:'hover'}}"
         />
         <!--选择框  自带搜索url-->
@@ -102,6 +104,7 @@
           v-if="item.type == 'date'"
           v-model="searchModel[item.key]"
           type="date"
+          clearable
           :value-format="item.valueFormat || 'yyyy-MM-dd '"
           :format="item.formatter || 'yyyy-MM-dd'"
           :placeholder="item.ph || '请选择日期'"
@@ -113,6 +116,7 @@
           :picker-options="daterangePickerOptions"
           type="datetimerange"
           range-separator="至"
+          clearable
           :format="item.formatter || 'yyyy-MM-dd'"
           :value-format="item.valueFormat || 'yyyy-MM-dd'"
           :start-placeholder="item.startPh || '开始日期'"
