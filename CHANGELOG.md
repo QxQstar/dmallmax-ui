@@ -1,9 +1,16 @@
-# [1.2.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.1.0...v1.2.0) (2020-03-05)
+# [1.3.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.1.0...v1.3.0) (2020-03-05)
+
+
+### Bug Fixes
+
+* 解决 table-list setData 参数的bug ([5e18624](https://github.com/QxQstar/dmallmax-ui/commit/5e186247799e70afd7af21def08427eb9e30fd36))
 
 
 ### Features
 
 * 修改 table-list 中 setData 的参数 ([849499c](https://github.com/QxQstar/dmallmax-ui/commit/849499c0c426fb2e3e355d00fb70193f6dbad263))
+* 修改http方法的拦截器 ([247a0df](https://github.com/QxQstar/dmallmax-ui/commit/247a0df0d487f80df720ed56b4bd012049065d62))
+* 往 searchBox 中的下拉框可清除 ([38a5aba](https://github.com/QxQstar/dmallmax-ui/commit/38a5abae94a83084803cb94864b81b3bbcf0a284))
 
 
 
