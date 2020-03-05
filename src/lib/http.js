@@ -26,7 +26,7 @@ http.interceptors.request.use(httpRequestIntercept,function (err) {
 http.interceptors.response.use(function (response) {
   const resData = response.data || {};
   if(resData.ret + '' === '0') { // 请求成功
-    return resData.content
+    return resData
   } else if(['50001', '100021'].indexOf(resData.ret + '') > -1) { // 登录失效
     Vue.prototype.$alert(resData.msg || '登录已失效，请重新登录!!!')
     return Promise.reject(resData);
