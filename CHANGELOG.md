@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.1.0...v1.2.0) (2020-03-05)
+
+
+### Features
+
+* 修改 table-list 中 setData 的参数 ([849499c](https://github.com/QxQstar/dmallmax-ui/commit/849499c0c426fb2e3e355d00fb70193f6dbad263))
+
+
+
 # [1.1.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.0.0...v1.1.0) (2020-03-05)
 
 
