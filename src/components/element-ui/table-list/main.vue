@@ -264,9 +264,9 @@
         }
 
         fn
-          .then((content) => {
-          this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(content) : content
-          return this.dataResource;
+          .then((res) => {
+            this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(this.$parent,res.content) : res.content;
+            return this.dataResource;
         })
           .then(() => {
             this.$nextTick(() => {
