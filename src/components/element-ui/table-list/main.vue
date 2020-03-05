@@ -265,14 +265,11 @@
 
         fn
           .then((res) => {
-            // console.log(res.content,'rrr')
             if(this.resultTableConf.setData) {
               this.dataResource = this.resultTableConf.setData(this.$parent,res.content)
             } else {
               this.dataResource = res.content
             }
-            // this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(this.$parent,res.content) : res.content;
-            console.log(this.dataResource)
             return this.dataResource;
         })
           .then(() => {
