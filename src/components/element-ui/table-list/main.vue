@@ -98,11 +98,11 @@
     pages:{
       size:15
     },
-    setData(content){
+    setData(vm,content){
       return content
     },
     // 自定义参数
-    customParam(param){
+    customParam(vm,param){
       return param
     }
   };
@@ -227,7 +227,7 @@
 
         const url = this.getUrl(
           this.resultTableConf.url,
-          this.resultTableConf.customParam ? this.resultTableConf.customParam(paramObj) : paramObj
+          this.resultTableConf.customParam ? this.resultTableConf.customParam(this.$parent,paramObj) : paramObj
         );
 
         return this.http(url)
@@ -265,7 +265,14 @@
 
         fn
           .then((res) => {
-            this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(this.$parent,res.content) : res.content;
+            // console.log(res.content,'rrr')
+            if(this.resultTableConf.setData) {
+              this.dataResource = this.resultTableConf.setData(this.$parent,res.content)
+            } else {
+              this.dataResource = res.content
+            }
+            // this.dataResource = this.resultTableConf.setData ? this.resultTableConf.setData(this.$parent,res.content) : res.content;
+            console.log(this.dataResource)
             return this.dataResource;
         })
           .then(() => {
