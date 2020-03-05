@@ -101,23 +101,23 @@
         </el-select> -->
         <!--单个时间选择-->
         <dm-date-picker
-          v-if="item.type == 'date'"
+          v-if="singleDateType.indexOf(item.type) > -1"
           v-model="searchModel[item.key]"
-          type="date"
+          :type="item.type"
           clearable
-          :value-format="item.valueFormat || 'yyyy-MM-dd '"
-          :format="item.formatter || 'yyyy-MM-dd'"
+          :value-format="item.valueFormat || 'yyyy-MM-dd'"
+          :format="item.formatter"
           :placeholder="item.ph || '请选择日期'"
         />
         <!--daterange-->
         <dm-date-picker
-          v-if="item.type == 'daterange'"
+          v-if="doubleDateType.indexOf(item.type) > -1"
           v-model="searchModel[item.key]"
           :picker-options="daterangePickerOptions"
-          type="datetimerange"
+          :type="item.type"
           range-separator="至"
           clearable
-          :format="item.formatter || 'yyyy-MM-dd'"
+          :format="item.formatter"
           :value-format="item.valueFormat || 'yyyy-MM-dd'"
           :start-placeholder="item.startPh || '开始日期'"
           :end-placeholder="item.endPh || '结束日期'"
@@ -165,7 +165,9 @@
       return {
         searchModel: {},
         initSearchModel: {},       //初始化参数model，用于reset后赋值
-        daterangePickerOptions:{}
+        daterangePickerOptions:{},
+        singleDateType:['year','month','date','week','datetime'],
+        doubleDateType:['datetimerange','daterange','monthrange'],
       }
     },
     computed:{
@@ -207,12 +209,11 @@
       changeDateRangeParam(query){
         let daterange=[];
         this.searchConf.forEach(item=>{
-          if(item.type === 'daterange'){
+          if(this.doubleDateType.indexOf(item.type) > -1){
             daterange.push(item);
           }
-        })
+        });
         daterange.forEach(item=>{
-
           if(query[item.key]&& Object.prototype.toString.call(query[item.key])== '[object Array]'){
             query[item.key1]=query[item.key][1];
             query[item.key]=query[item.key][0];
@@ -223,7 +224,7 @@
       getInitParams() {
         const searchParam = {};
         this.searchConf.forEach(item => {
-          searchParam[item.key] = item.default;
+          searchParam[item.key] =  item.default;
         });
         this.searchModel = searchParam;
         this.initSearchModel = {...searchParam};
