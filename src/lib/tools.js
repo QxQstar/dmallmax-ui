@@ -331,3 +331,12 @@ export function removeClass(ele, cls) {
     ele.className = ele.className.replace(reg, ' ')
   }
 }
+
+/**
+ * 是否是函数
+ * @param fn
+ * @returns {boolean}
+ */
+export function isFunction(fn) {
+  return Object.prototype.toString.call(fn) === "[object Function]";
+}
