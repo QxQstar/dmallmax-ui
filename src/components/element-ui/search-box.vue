@@ -1,6 +1,6 @@
 <template>
-  <div class="dm-search-box dm-elem--flex">
-    <div class="dm-search-box-content dm-elem--1x">
+  <div class="dm-search-box">
+    <div class="dm-search-box-content">
       <div
         v-for="(item, index) in searchConf"
         :key="index"
@@ -31,6 +31,7 @@
           v-model="searchModel[item.key]"
           :multiple="item.ismultiple"
           :placeholder="item.ph || '请选择'"
+          filterable
         >
           <template
             v-if="item.options"
@@ -78,7 +79,8 @@
           v-if="item.type == 'cascader'"
           v-model="searchModel[item.key]"
           :options="selectInfo[item.key]"
-          :props="item.props"
+          filterable
+          :props="{...item.props,...{expandTrigger:'hover'}}"
         />
         <!--选择框  自带搜索url-->
         <!-- <el-select v-if="item.type == 'select_online'"
@@ -117,23 +119,25 @@
           :end-placeholder="item.endPh || '结束日期'"
         />
       </div>
-    </div>
-    <div
-      v-if="searchConf && searchConf.length > 0"
-      class="dm-search-box-btns dm-elem--no-scale"
-    >
-      <dm-button
-        type="primary"
-        @click="handleSearch"
+      <template
+        v-if="searchConf && searchConf.length > 0"
+        class="dm-search-box-btns "
       >
-        搜索
-      </dm-button>
-      <dm-button
-        plain
-        @click="handleReset"
-      >
-        重置
-      </dm-button>
+        <dm-button
+          type="primary"
+          class="dm-search-box__button"
+          @click="handleSearch"
+        >
+          搜索
+        </dm-button>
+        <dm-button
+          plain
+          class="dm-search-box__button"
+          @click="handleReset"
+        >
+          重置
+        </dm-button>
+      </template>
     </div>
   </div>
 </template>
@@ -223,15 +227,14 @@
       //点击搜索
       handleSearch() {
         const searchQuery = this.getQuery(this.searchModel);
-        this.$emit('search', searchQuery);
-
         this.$DMALLMAX.searchQuery.changeSearchParams(searchQuery)
+        this.$emit('search', searchQuery);
       },
       //点击重置
       handleReset() {
         this.searchModel = {...this.initSearchModel};
+        this.handleSearch();
         this.$emit('reset');
-        this.handleSearch()
       }
     },
   }

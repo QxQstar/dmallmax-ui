@@ -4,7 +4,7 @@
       v-model="searchVal"
       :disabled="disabled"
       :placeholder="placeholder"
-      style="width: 200px"
+      class="dm-batch-input__input"
     />
     <dm-button
       type="primary"
