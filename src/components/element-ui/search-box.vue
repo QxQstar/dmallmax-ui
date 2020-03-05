@@ -146,6 +146,8 @@
   </div>
 </template>
 <script>
+  import { isFunction } from "../../lib/tools";
+
   export default {
     name: 'DataSearch',
     componentName: 'dataSearch',
@@ -224,7 +226,7 @@
       getInitParams() {
         const searchParam = {};
         this.searchConf.forEach(item => {
-          searchParam[item.key] =  item.default;
+          searchParam[item.key] = isFunction(item.default) ? item.default(this) : item.default;
         });
         this.searchModel = searchParam;
         this.initSearchModel = {...searchParam};

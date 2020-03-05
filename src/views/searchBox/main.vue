@@ -14,11 +14,11 @@
           searchConf:[
             {
               key:'date_begin',
-              type:'datetimerange',
-              formatter:'yyyy-MM-dd hh:mm',
+              type:'daterange',
+              formatter:'yyyy-MM-dd',
               label:'',
               key1:'date_end',
-              // default:['2019-12-1','2019-12-2']
+              default(){return ['2019-12-1','2019-12-2']}
             },
             {
               key: 'checked_by',
