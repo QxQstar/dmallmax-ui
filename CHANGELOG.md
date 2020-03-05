@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.3.1...v1.4.0) (2020-03-05)
+
+
+### Features
+
+* 工具方法判断是否是函数 ([6a0c5bf](https://github.com/QxQstar/dmallmax-ui/commit/6a0c5bf540e80fc360f5656ba34558388e42e8d7))
+* 时间选择器支持多种形式 ([c78f70a](https://github.com/QxQstar/dmallmax-ui/commit/c78f70a0519b8a0bd861ffcb749380bc6589fd43))
+* 让search-box的默认值支持一个函数 ([5fe70ad](https://github.com/QxQstar/dmallmax-ui/commit/5fe70ad2c6abd21c5f27e7ec494621af6e05a127))
+
+
+
 ## [1.3.1](https://github.com/QxQstar/dmallmax-ui/compare/v1.3.0...v1.3.1) (2020-03-05)
 
 
