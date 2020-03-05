@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.0.0...v1.1.0) (2020-03-05)
+
+
+### Features
+
+* 修改searchBox的样式 ([313daa3](https://github.com/QxQstar/dmallmax-ui/commit/313daa37018f6843470d6baaf863a1bfaba673cc))
+
+
+
 # [1.0.0](https://github.com/QxQstar/dmallmax-ui/compare/v0.1.6...v1.0.0) (2020-03-04)
 
 
