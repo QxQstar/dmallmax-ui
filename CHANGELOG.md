@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/QxQstar/dmallmax-ui/compare/v1.4.0...v1.4.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* 解决 searchBox 和 status-filter 默认参数不传递到接口的bug ([458345c](https://github.com/QxQstar/dmallmax-ui/commit/458345cf31b7af2efe2fd16e2fa2f0e6ed3c91c8))
+
+
+
 # [1.4.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.3.1...v1.4.0) (2020-03-05)
 
 
