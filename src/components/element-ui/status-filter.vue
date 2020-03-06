@@ -14,13 +14,8 @@
   </div>
 </template>
 <script>
-  import { param,getQueryObject ,objectMerge } from '../../lib/tools'
   export default {
     props:{
-      onTime:{
-        type:Boolean,
-        default:false
-      },
       list:{
         type:Array,
         default(){
@@ -56,20 +51,21 @@
         }
       }
     },
-    mounted() {
+    created() {
       this.activeStatus = this.conf.default || '';
+      this.setStatus();
     },
     methods:{
+      setStatus(){
+        const obj = {};
+        obj[this.conf.key || 'status'] = this.activeStatus;
+        this.$DMALLMAX.searchQuery.changeStatusParams(obj)
+        return obj;
+      },
       changeStatus(item){
         this.activeStatus = item[this.props.key];
-        let obj = {};
-        obj[this.conf.key || 'status'] = this.activeStatus;
-        this.$emit('change', obj);
-        this.$DMALLMAX.searchQuery.changeStatusParams(obj)
-        if(this.onTime) {
-          const search = getQueryObject();
-          window.location.href = window.location.pathname + '?' + param(objectMerge(search,obj));
-        }
+        const obj = this.setStatus();
+        this.$emit('change', obj)
       }
     }
   }

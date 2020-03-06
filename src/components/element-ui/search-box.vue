@@ -16,7 +16,6 @@
         <dm-input
           v-if="item.type == 'input'"
           v-model="searchModel[item.key]"
-          :suffix-icon="item.icon"
           :placeholder="item.ph || '请输入搜索项'"
         />
         <!--批量输入-->
@@ -230,11 +229,16 @@
         });
         this.searchModel = searchParam;
         this.initSearchModel = {...searchParam};
+        this.setSearchQuery();
+      },
+      setSearchQuery(){
+        const searchQuery = this.getQuery(this.searchModel);
+        this.$DMALLMAX.searchQuery.changeSearchParams(searchQuery)
+        return searchQuery
       },
       //点击搜索
       handleSearch() {
-        const searchQuery = this.getQuery(this.searchModel);
-        this.$DMALLMAX.searchQuery.changeSearchParams(searchQuery)
+        const searchQuery = this.setSearchQuery();
         this.$emit('search', searchQuery);
       },
       //点击重置
