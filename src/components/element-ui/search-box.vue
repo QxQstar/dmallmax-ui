@@ -118,8 +118,8 @@
           clearable
           :format="item.formatter"
           :value-format="item.valueFormat || 'yyyy-MM-dd'"
-          :start-placeholder="item.startPh || '开始日期'"
-          :end-placeholder="item.endPh || '结束日期'"
+          :start-placeholder="(item.ph||'').split(',')[0] || '开始日期'"
+          :end-placeholder="(item.ph||'').split(',')[1] || '结束日期'"
         />
       </div>
       <template
@@ -199,28 +199,12 @@
       getQuery(val){
         let query = {...val};
         let searchQuery = {};
-        this.changeDateRangeParam(query);
         for(let key in query) {
           if(query[key]) {
             searchQuery[key] = query[key];
           }
         }
         return searchQuery;
-      },
-      changeDateRangeParam(query){
-        let daterange=[];
-        this.searchConf.forEach(item=>{
-          if(this.doubleDateType.indexOf(item.type) > -1){
-            daterange.push(item);
-          }
-        });
-        daterange.forEach(item=>{
-          if(query[item.key]&& Object.prototype.toString.call(query[item.key])== '[object Array]'){
-            query[item.key1]=query[item.key][1];
-            query[item.key]=query[item.key][0];
-          }
-        })
-
       },
       getInitParams() {
         const searchParam = {};
