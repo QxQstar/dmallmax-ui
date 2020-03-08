@@ -1,10 +1,12 @@
 <template>
   <div class="dm-table-list">
     <div
-      v-if="$slots.title"
+      v-if="$slots.title || dataResource && dataResource.title"
       class="dm-table-list-header"
     >
-      <slot name="title" />
+      <slot name="title">
+        {{ dataResource.title }}
+      </slot>
     </div>
     <dm-table
       v-if="dataResource"
@@ -195,22 +197,27 @@
         this.$emit('current-change',this.pn,this.resultTableConf.pages.size,page)
       },
       handleSelectionChange(rows){
-        rows.forEach(row => {
-          if(this.chooseRowIds.indexOf(row[this.resultTableConf.unixId]) < 0){
-            this.chooseRows.push(row);
-          }
-        });
+        if(this.resultTableConf.selectableMultiPage) {
+          rows.forEach(row => {
+            if(this.chooseRowIds.indexOf(row[this.resultTableConf.unixId]) < 0){
+              this.chooseRows.push(row);
+            }
+          });
 
-        for(let i = this.chooseRows.length - 1;i >= 0;i--){
-          const row = this.chooseRows[i];
-          // 是否是当前页的数据
-          const isCurPage = this.dataResource.list.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
-                 // 是否被选中
-          const isSelect = rows.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
-          if(isCurPage && !isSelect) {
-            this.chooseRows.splice(i,1);
+          for(let i = this.chooseRows.length - 1;i >= 0;i--){
+            const row = this.chooseRows[i];
+            // 是否是当前页的数据
+            const isCurPage = this.dataResource.list.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
+            // 是否被选中
+            const isSelect = rows.find(item => item[this.resultTableConf.unixId] === row[this.resultTableConf.unixId]);
+            if(isCurPage && !isSelect) {
+              this.chooseRows.splice(i,1);
+            }
           }
+        } else {
+          this.chooseRows = rows;
         }
+
         this.$emit('selection-change',this.chooseRows)
       },
       getUrl(address,obj){
