@@ -249,9 +249,11 @@
             list = (this.resultTableConf.dataResource.list||[])
           }
           resolve({
-            list:list,
-            total:this.resultTableConf.dataResource.total || 0
-          })
+              content:{
+                list:list,
+                total:this.resultTableConf.dataResource.total || 0
+              }
+            })
         })
       },
       // 设置跨页选中
