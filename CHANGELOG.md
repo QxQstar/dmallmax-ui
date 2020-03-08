@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.4.1...v2.0.0) (2020-03-08)
+
+
+### Bug Fixes
+
+* 解决 table-list 本地分页的 bug ([15f756a](https://github.com/QxQstar/dmallmax-ui/commit/15f756a6ee7e8f338fd8b5815a60cda952ca1e6d))
+
+
+### Features
+
+* 修改 search-box 组件中的时间选择器的占位符以及参数名 ([b3f17c4](https://github.com/QxQstar/dmallmax-ui/commit/b3f17c4fe51c71ca26f2619a055487999abcfb4a))
+* 修改非跨页多选时，chooseRow的赋值 ([df6c1b2](https://github.com/QxQstar/dmallmax-ui/commit/df6c1b24c535aff4f8734a385a0d3e2843109dee))
+
+
+
 ## [1.4.1](https://github.com/QxQstar/dmallmax-ui/compare/v1.4.0...v1.4.1) (2020-03-06)
 
 
