@@ -8,7 +8,7 @@
       >
         <div
           v-if="item.label"
-          class="search-label"
+          class="dm-search-label dm-elem--inline-block"
         >
           <label>{{ item.label }}</label>
         </div>
