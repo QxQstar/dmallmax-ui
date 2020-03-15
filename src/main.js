@@ -5,7 +5,7 @@ import './filters/common/index.js'
 import './styles/index.less'
 // import './../dist/DMALLMAX.css'
 // import DMUI from './../dist/DMALLMAX.common'
-import DMUI from './components/element-ui/index'
+import DMUI from './components/index'
 import './styles/components/index.scss'
 
 
