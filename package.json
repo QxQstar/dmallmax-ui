@@ -1,19 +1,20 @@
 {
   "name": "dmallmax-ui",
   "version": "2.0.0",
-  "main": "dist/DMALLMAX.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name DMALLMAX ./src/components/element-ui/index.js",
     "lint": "vue-cli-service lint",
-    "report": "vue-cli-service build --mode development --report",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "pub": "npm run build && npm publish --access public",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "report": "vue-cli-service build --mode development --report",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
   },
+  "main": "dist/DMALLMAX.common.js",
   "dependencies": {
     "clipboard": "2.0.4",
     "core-js": "^3.6.4",
-    "dmallmax-ui": "^0.1.0",
     "element-theme": "^2.0.1",
     "element-theme-chalk": "^2.13.0",
     "element-ui": "^2.13.0",
@@ -30,7 +31,6 @@
     "conventional-changelog-cli": "^2.0.23",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "fis3": "^3.4.41",
     "ghooks": "^2.0.4",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
@@ -38,6 +38,7 @@
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "validate-commit-msg": "^2.14.0",
+    "vue-cli-plugin-styleguidist": "^4.13.1",
     "vue-template-compiler": "2.6.10"
   },
   "config": {
