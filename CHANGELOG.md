@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.0...v2.0.1) (2020-03-16)
+
+
+### Bug Fixes
+
+* 修改 search-box 中 label 的样式 ([5904c16](https://github.com/QxQstar/dmallmax-ui/commit/5904c1621d8d2bca53b293226fd32bdd52e3cd28))
+
+
+
 # [2.0.0](https://github.com/QxQstar/dmallmax-ui/compare/v1.4.1...v2.0.0) (2020-03-08)
 
 
