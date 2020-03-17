@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.2...v2.0.3) (2020-03-17)
+
+
+### Bug Fixes
+
+* search-box 判断下拉框数据是否存在 ([a6bd756](https://github.com/QxQstar/dmallmax-ui/commit/a6bd7568a9a3bf4eaf7692048101c54d4af8344e))
+
+
+
 ## [2.0.2](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.1...v2.0.2) (2020-03-17)
 
 
