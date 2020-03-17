@@ -68,6 +68,7 @@
   import { param } from '@/lib/tools'
   let vm = null;
   const defaultConfig = {
+    current:1,
     // 接口地址
     url: null,
     method:"GET",
@@ -152,7 +153,7 @@
     },
     data(){
       return {
-        current:1,
+        current:this.tableConf.current || 1,
         resultTableConf:{
           ...defaultConfig,
           ...this.tableConf
