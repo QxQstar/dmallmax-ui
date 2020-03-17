@@ -1,3 +1,13 @@
+## [2.0.2](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.1...v2.0.2) (2020-03-17)
+
+
+### Bug Fixes
+
+* 修改query 参数将table-list 的 分页重置为1 ([6f2d435](https://github.com/QxQstar/dmallmax-ui/commit/6f2d43599bd8eaffe1c50fe4830dbafd34bb7cb5))
+* 判断下拉框是否应该加【 全部】选项 ([e152075](https://github.com/QxQstar/dmallmax-ui/commit/e15207564693a8cd42a26a12873ea4fd8919400f))
+
+
+
 ## [2.0.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.0...v2.0.1) (2020-03-16)
 
 
