@@ -48,48 +48,12 @@
               key: 'take_responsibility',
               type: 'select',
               label: '',
-              options:[
-                {
-                  responsibility:'',
-                  label:'全部'
-                },
-                {
-                  responsibility:'COMPANY',
-                  label:'公司'
-                },
-                {
-                  responsibility:'TENANT',
-                  label:'入驻'
-                },
-                {
-                  responsibility:'DELIVERYMAN',
-                  label:'司机'
-                }
-              ],
-              props:{
-                key:'responsibility',
-                label:'label'
-              },
               ph: '成本责任人',
             },
             {
               key:'payment-status',
               type: 'select',
               label: '',
-              options:[
-                {
-                  value:'',
-                  label:'全部'
-                },
-                {
-                  value:'SUCCESS',
-                  label:'是'
-                },
-                {
-                  value:'PENDING',
-                  label:'否'
-                }
-              ],
               props:{
                 key:'value',
                 label:'label'
@@ -117,6 +81,20 @@
             },
           ],
           selectInfo:{
+            'take_responsibility':{
+              COMPANY:'公司',
+              DELIVERYMAN:'司机'
+            },
+            'payment-status':[
+              {
+                value:'SUCCESS',
+                label:'是'
+              },
+              {
+                value:'PENDING',
+                label:'否'
+              }
+            ],
             category:[{
               value: 'zhinan',
               label: '指南',

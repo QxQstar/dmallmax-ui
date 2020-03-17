@@ -48,9 +48,10 @@
               v-if="!item.props"
             >
               <dm-option
+                v-if="Object.keys(selectInfo[item.key]).every(key => key + '' !== '0')"
                 key="-1"
                 value=""
-                :label="item.ph || '请选择'"
+                label="全部"
               />
               <dm-option
                 v-for="(item2, i) in selectInfo[item.key]"
@@ -61,8 +62,9 @@
             </template>
             <template v-else>
               <dm-option
-                key=""
-                :label="item.ph || '请选择'"
+                v-if="selectInfo[item.key].every(item2 => item2[(item.props && item.props.key)] && item2[(item.props && item.props.key)] + '' !== '0')"
+                key="-1"
+                label="全部"
                 value=""
               />
               <dm-option
