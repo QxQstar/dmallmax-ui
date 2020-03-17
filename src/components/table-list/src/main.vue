@@ -174,6 +174,8 @@
     },
     watch:{
       '$DMALLMAX.searchQuery.query'(){
+          // 重置分页
+          this.current = 1
           this.fetchData()
       }
     },
