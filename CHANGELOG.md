@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.3...v2.1.0) (2020-03-17)
+
+
+### Features
+
+* 支持从外部控制table-list 的页码 ([e55afe4](https://github.com/QxQstar/dmallmax-ui/commit/e55afe448a48cbc53e1c9d781a88cf10dcf13c7b))
+
+
+
 ## [2.0.3](https://github.com/QxQstar/dmallmax-ui/compare/v2.0.2...v2.0.3) (2020-03-17)
 
 
