@@ -17,6 +17,7 @@
       v-on="listeners"
       @select-all="handleSelectionChange"
       @select="handleSelectionChange"
+      @sort-change="handleSortChange"
     >
       <template v-for="(col,index) in resultTableConf.thead">
         <dm-table-column
@@ -158,6 +159,11 @@
           ...defaultConfig,
           ...this.tableConf
         },
+        // 排序
+        sort:{
+          key:'',
+          value:''
+        },
         // table 数据
         dataResource:'',
         chooseRows:[],
@@ -186,7 +192,7 @@
     created(){
       vm = this;
       // 不在 dm-table 上绑定的事件
-      const resetEvent = ['selection-change','current-change'];
+      const resetEvent = ['selection-change','current-change','sort-change'];
       Object.keys(this.$listeners).forEach(key => {
         if(resetEvent.indexOf(key) < 0) {
           this.listeners[key] = this.$listeners[key]
@@ -195,6 +201,14 @@
       this.fetchData();
     },
     methods:{
+      handleSortChange({ column, prop, order }){
+        this.sort = {
+          key:prop+'_sort',
+          value:order || undefined
+        }
+        this.fetchData();
+        this.$emit('sort-change',{column, prop, order })
+      },
       handlePageChange(page){
         this.fetchData();
         this.$emit('current-change',this.pn,this.resultTableConf.pages.size,page)
@@ -234,7 +248,9 @@
           rn:this.resultTableConf.pages.size,
           pn:this.pn
         };
-
+        if(this.sort.key && this.sort.value){
+          paramObj[this.sort.key] = this.sort.value
+        }
         const url = this.getUrl(
           this.resultTableConf.url,
           this.resultTableConf.customParam ? this.resultTableConf.customParam(this.$parent,paramObj) : paramObj

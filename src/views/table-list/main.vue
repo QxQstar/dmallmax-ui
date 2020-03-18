@@ -4,6 +4,7 @@
     :table-conf="tableConf"
     @selection-change="handleSelectionChange"
     @current-change="handlePageChange"
+    @sort-change="sortChange"
   />
 </template>
 <script>
@@ -21,8 +22,10 @@
           dataResource:{
             list:[{
               uid:'3344',
+              name:'11'
             },{
               uid:'44',
+              name:'11'
             }],
             total:2
           },
@@ -33,7 +36,13 @@
             },
             {
               value:'账号ID',
-              key:'uid'
+              key:'uid',
+              sortable:true
+            },
+            {
+              value:'name',
+              key:'name',
+              sortable:true
             },
             {
               value:'操作',
@@ -66,6 +75,9 @@
       },
       handlePageChange(pn,rn,page){
         console.log(pn,rn,page)
+      },
+      sortChange(obj){
+        console.log(obj)
       }
     }
   }
