@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.2.0...v2.3.0) (2020-03-19)
+
+
+### Features
+
+* table-list 可编辑 ([190f954](https://github.com/QxQstar/dmallmax-ui/commit/190f954c14bfdcf5581116a8d32840d7c13c9629))
+
+
+
 # [2.2.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.1.0...v2.2.0) (2020-03-18)
 
 
