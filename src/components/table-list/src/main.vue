@@ -21,7 +21,14 @@
     >
       <template v-for="(col,index) in resultTableConf.thead">
         <dm-table-column
-          v-if="resultTableConf.filters[col.key] || (col.type === 'operation' && resultTableConf.filters._OPERATION_)"
+          v-if="col.type === 'selection'"
+          :key="index"
+          type="selection"
+          :width="col.width || '55px'"
+          :fixed="col.fixed || false"
+        />
+        <dm-table-column
+          v-else-if="resultTableConf.filters[col.key] || (col.type === 'operation' && resultTableConf.filters._OPERATION_)"
           :key="index"
           :type="col.type"
           :label="col.value"
@@ -38,7 +45,7 @@
               :render-func="col.type === 'operation' && resultTableConf.filters._OPERATION_ ? resultTableConf.filters._OPERATION_ :resultTableConf.filters[col.key]"
               :row="scope.row"
               :index="scope.$index"
-              :col="col.key"
+              :col="col"
             />
           </template>
         </dm-table-column>
@@ -52,7 +59,24 @@
           :width="col.width"
           :fixed="col.fixed||false"
           :sortable="col.sortable||false"
-        />
+        >
+          <template
+            slot-scope="scope"
+          >
+            <span
+              v-if="!col.editable || !scope.row._ISEDIT_"
+            >
+              {{ scope.row[col.key] }}
+            </span>
+            <span
+              v-if="col.editable && scope.row._ISEDIT_"
+            >
+              <dm-input
+                v-model="scope.row[col.key]"
+              />
+            </span>
+          </template>
+        </dm-table-column>
       </template>
     </dm-table>
 
@@ -66,7 +90,7 @@
   </div>
 </template>
 <script>
-  import { param } from '@/lib/tools'
+  import { param,deepClone} from '@/lib/tools'
   let vm = null;
   const defaultConfig = {
     current:1,
@@ -114,7 +138,7 @@
     components:{
       vOperation:{
         render(createElement) {
-          return this.renderFunc(createElement,this.row,vm.$parent,this.col,this.index)
+          return this.renderFunc(createElement,this.row,vm.$parent,this.col,this.index,this.oldRowData)
         },
         props:{
           renderFunc:{
@@ -130,8 +154,13 @@
             default:0
           },
           col:{
-            type:String,
-            default:''
+            type:Object,
+            default() { return {} }
+          }
+        },
+        data(){
+          return {
+            oldRowData:deepClone(this.row)
           }
         }
       }
@@ -283,6 +312,14 @@
           }
         })
       },
+      setUIField(data){
+        return data.map(item => {
+          return {
+            ...item,
+            _ISEDIT_:false
+          }
+        })
+      },
       fetchData(){
         let fn = '';
         if(this.resultTableConf.url) {
@@ -293,11 +330,14 @@
 
         fn
           .then((res) => {
+            let dataResource = '';
             if(this.resultTableConf.setData) {
-              this.dataResource = this.resultTableConf.setData(this.$parent,res.content)
+              dataResource = this.resultTableConf.setData(this.$parent,res.content)
             } else {
-              this.dataResource = res.content
+              dataResource = res.content
             }
+            dataResource.list = this.setUIField(dataResource.list || [])
+            this.dataResource = dataResource
             return this.dataResource;
         })
           .then(() => {

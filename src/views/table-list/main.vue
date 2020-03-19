@@ -22,10 +22,10 @@
           dataResource:{
             list:[{
               uid:'3344',
-              name:'11'
+              name:'bella'
             },{
               uid:'44',
-              name:'11'
+              name:'何遇'
             }],
             total:2
           },
@@ -37,12 +37,11 @@
             {
               value:'账号ID',
               key:'uid',
-              sortable:true
             },
             {
-              value:'name',
+              value:'姓名',
               key:'name',
-              sortable:true
+              editable:true
             },
             {
               value:'操作',
@@ -50,19 +49,38 @@
             }
           ],
           filters:{
-            _OPERATION_(h,row,vm){
-              return h('div',[
-                h('dm-button',{
-                  props:{
-                    type:'text'
-                  },
-                  on:{
-                    click(){
-                      console.log(vm)
+            _OPERATION_(h,row,vm,col,index,oldRow){
+              console.log(vm,col,index,oldRow)
+              const btns = []
+              if(row._ISEDIT_){
+                btns.push(
+                  h('dm-button',{
+                    props:{
+                      type:'text'
+                    },
+                    on:{
+                      click(){
+                        row._ISEDIT_ = false
+                        row.name = oldRow.name;
+                      }
                     }
-                  }
-                },'编辑')
-              ])
+                  },'取消')
+                )
+              } else {
+                btns.push(
+                  h('dm-button',{
+                    props:{
+                      type:'text'
+                    },
+                    on:{
+                      click(){
+                        row._ISEDIT_ = true
+                      }
+                    }
+                  },'编辑')
+                )
+              }
+              return h('div',btns)
             }
           },
         },
