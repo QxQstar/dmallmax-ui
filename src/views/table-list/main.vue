@@ -22,10 +22,14 @@
           dataResource:{
             list:[{
               uid:'3344',
-              name:'bella'
+              person:{
+                name:'bella'
+              }
             },{
               uid:'44',
-              name:'何遇'
+              person:{
+                name:'何遇'
+              }
             }],
             total:2
           },
@@ -40,7 +44,7 @@
             },
             {
               value:'姓名',
-              key:'name',
+              key:'person.name',
               editable:true
             },
             {
@@ -61,7 +65,7 @@
                     on:{
                       click(){
                         row._ISEDIT_ = false
-                        row.name = oldRow.name;
+                        row.person.name = oldRow.person.name;
                       }
                     }
                   },'取消')

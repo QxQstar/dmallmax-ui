@@ -14,6 +14,7 @@
   "main": "dist/DMALLMAX.common.js",
   "dependencies": {
     "clipboard": "2.0.4",
+    "cool-path": "^0.1.28",
     "core-js": "^3.6.4",
     "element-theme": "^2.0.1",
     "element-theme-chalk": "^2.13.0",

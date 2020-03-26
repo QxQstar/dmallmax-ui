@@ -63,18 +63,10 @@
           <template
             slot-scope="scope"
           >
-            <span
-              v-if="!col.editable || !scope.row._ISEDIT_"
-            >
-              {{ scope.row[col.key] }}
-            </span>
-            <span
-              v-if="col.editable && scope.row._ISEDIT_"
-            >
-              <dm-input
-                v-model="scope.row[col.key]"
-              />
-            </span>
+            <col-content
+              :col="col"
+              :row="scope.row"
+            />
           </template>
         </dm-table-column>
       </template>
@@ -91,6 +83,8 @@
 </template>
 <script>
   import { param,deepClone} from '@/lib/tools'
+  import colContent from './col-content'
+
   let vm = null;
   const defaultConfig = {
     current:1,
@@ -136,6 +130,7 @@
   };
   export default {
     components:{
+      colContent,
       vOperation:{
         render(createElement) {
           return this.renderFunc(createElement,this.row,vm.$parent,this.col,this.index,this.oldRowData)
