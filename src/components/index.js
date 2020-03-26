@@ -84,6 +84,7 @@ import DmSearchBox from './search-box/src/main.vue'
 import DmTableList from './table-list/src/main.vue'
 import DmBatchInput from './batch-input/src/main.vue'
 import DmTopChoose from './top-choose/src/main.vue'
+import DmEmptyBox from './empty-box/src/main.vue'
 import searchQuery from './table-list/query.js'
 
 import '../styles/components/index.scss'
@@ -170,7 +171,8 @@ const components = {
   DmSearchBox:DmSearchBox,
   DmTableList:DmTableList,
   DmBatchInput:DmBatchInput,
-  DmTopChoose:DmTopChoose
+  DmTopChoose:DmTopChoose,
+  DmEmptyBox:DmEmptyBox
 }
 
 function install(Vue,opts = {}) {
@@ -287,5 +289,6 @@ export default {
   DmSearchBox,
   DmTableList,
   DmBatchInput,
-  DmTopChoose
+  DmTopChoose,
+  DmEmptyBox
 }

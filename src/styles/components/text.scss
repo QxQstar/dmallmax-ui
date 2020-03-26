@@ -1,0 +1,44 @@
+@import "../../theme/reset-variables";
+.dm-text{
+  font-size: $--font-size-base;
+  color: $--color-text-primary;
+}
+
+.dm-text--error{
+  color: $--color-danger;
+}
+
+.dm-text--primary{
+  color: $--color-primary;
+}
+
+.dm-text--success{
+  color: $--color-success;
+}
+
+.dm-text--tip{
+  color: $--color-text-secondary;
+}
+
+.dm-text--link{
+  color: $--color-secondary;
+}
+
+.dm-text--mini{
+  font-size: $--font-size-extra-small;
+}
+.dm-text--small{
+  font-size: $--font-size-small;
+}
+
+.dm-text--base{
+  font-size: $--font-size-base;
+}
+
+.dm-text--large{
+  font-size: $--font-size-large;
+}
+
+.dm-text--medium{
+  font-size: $--font-size-medium;
+}
