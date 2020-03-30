@@ -13,11 +13,10 @@
         searchData:{
           searchConf:[
             {
-              key:'date_begin',
+              key:'[date_begin,date_end]',
               type:'daterange',
               formatter:'yyyy-MM-dd',
               label:'',
-              key1:'date_end',
               default(){return ['2019-12-1','2019-12-2']}
             },
             {
@@ -71,10 +70,9 @@
               ph:'多个'
             },
             {
-              key: 'category',
+              key: '[category,onde,rr]',
               type: 'cascader',
               label: '',
-              params: ['top_cat','second_cat'],
               props:{
                 value:'value' // select组件中用下拉选择的显示的选项和后端需要的筛选字段
               },
@@ -95,7 +93,7 @@
                 label:'否'
               }
             ],
-            category:[{
+            '[category,onde,rr]':[{
               value: 'zhinan',
               label: '指南',
               children: [{
@@ -294,7 +292,47 @@
         }
       }
     },
+    created(){
+      const param = {
+        date_begin:'2019-12-4',
+        date_end:'2019-12-6',
+        checked_by:'SUPPORT_STAFF',
+        category: "zujian",
+        onde: "form",
+        rr: "checkbox",
+      }
+      const getDefault = (searchItem) => {
+        return this.combineValue(param,searchItem.key) || searchItem.default
+      }
+      this.searchData.searchConf = this.searchData.searchConf.map(item => {
+        return {
+          ...item,
+          default:getDefault(item)
+        }
+      })
+
+    },
     methods:{
+      // 根据 key  的格式生成参数的格式
+      combineValue(value,key){
+        let result
+        key = key.trim();
+        // 如果 key 是 [key1,key2] 这种形式
+        if(/^\[.+\]$/.test(key)){
+          const keyArr = key.replace(/^\[/,'').replace(/\]$/,'').split(',');
+          result = []
+          keyArr.forEach(key => {
+            result.push(value[key])
+          });
+
+          if(result.every(item => !item)){
+            result = ''
+          }
+        } else {
+          result =  value[key];
+        }
+        return result
+      },
       handleSearch(obj){
         console.log(obj)
       }
