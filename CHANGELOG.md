@@ -1,8 +1,14 @@
+# [2.5.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.4.0...v2.5.0) (2020-03-30)
+
+
+
 # [2.4.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.3.0...v2.4.0) (2020-03-30)
 
 
 ### Features
 
+* searchBox 组件支持参数解构 ([75c40d6](https://github.com/QxQstar/dmallmax-ui/commit/75c40d6fc18b962d4e347d4fc6de826204e0102b))
+* searchBox's demo ([810e94d](https://github.com/QxQstar/dmallmax-ui/commit/810e94d5940f6a10e4e39930038a37976cb2a8e0))
 * table-list  支持路径取值 ([b6c4826](https://github.com/QxQstar/dmallmax-ui/commit/b6c4826c2138560436215ad722d4c2161510e124))
 * 增加 empty-box 组件 ([9fa4e32](https://github.com/QxQstar/dmallmax-ui/commit/9fa4e32ee7a2118a98a0028648f5ba6f108e0a27))
 
