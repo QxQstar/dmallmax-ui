@@ -1,3 +1,13 @@
+# [2.4.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.3.0...v2.4.0) (2020-03-30)
+
+
+### Features
+
+* table-list  支持路径取值 ([b6c4826](https://github.com/QxQstar/dmallmax-ui/commit/b6c4826c2138560436215ad722d4c2161510e124))
+* 增加 empty-box 组件 ([9fa4e32](https://github.com/QxQstar/dmallmax-ui/commit/9fa4e32ee7a2118a98a0028648f5ba6f108e0a27))
+
+
+
 # [2.3.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.2.0...v2.3.0) (2020-03-19)
 
 
