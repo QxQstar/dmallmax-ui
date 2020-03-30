@@ -203,10 +203,27 @@
         let searchQuery = {};
         for(let key in query) {
           if(query[key]) {
-            searchQuery[key] = query[key];
+            const _key = key.trim();
+            if(/^\[.+\]$/.test(_key)){
+              searchQuery = {
+                ...searchQuery,
+                ...this.separateParam(query[key],_key)
+              }
+            }else{
+              searchQuery[key] = query[key];
+            }
           }
         }
         return searchQuery;
+      },
+      // 解构参数
+      separateParam(value,key){
+        const keyArr = key.replace(/^\[/,'').replace(/\]$/,'').split(',');
+        const result = {};
+        keyArr.forEach((key,index) => {
+          result[key] = value[index]
+        });
+        return result;
       },
       getInitParams() {
         const searchParam = {};
