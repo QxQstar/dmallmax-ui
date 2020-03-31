@@ -2,9 +2,17 @@
 .dm-search-box{
   margin-bottom: $--area-vertical-gap;
 }
+.dm-search-box-content{
+  display: flex;
+  flex-wrap: wrap;
+}
 .dm-search-box__item{
+  display: flex;
+  min-width: 250px;
   margin-right: $--search-box-margin-horizontal;
   margin-bottom: $--search-box-margin-vertical;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .dm-search-box__button{

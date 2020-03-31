@@ -4,11 +4,11 @@
       <div
         v-for="(item, index) in searchConf"
         :key="index"
-        class="dm-search-box__item dm-elem--inline-block"
+        class="dm-search-box__item"
       >
         <div
           v-if="item.label"
-          class="dm-search-label dm-elem--inline-block"
+          class="dm-search-label"
         >
           <label>{{ item.label }}</label>
         </div>
