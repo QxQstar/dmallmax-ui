@@ -52,13 +52,15 @@
       }
     },
     created() {
-      this.activeStatus = this.conf.default || '';
+      this.activeStatus = this.conf.default;
       this.setStatus();
     },
     methods:{
       setStatus(){
         const obj = {};
-        obj[this.conf.key || 'status'] = this.activeStatus;
+        if(this.activeStatus) {
+          obj[this.conf.key || 'status'] = this.activeStatus;
+        }
         this.$DMALLMAX.searchQuery.changeStatusParams(obj)
         return obj;
       },

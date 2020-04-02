@@ -3,7 +3,7 @@
     <dm-status-filter
       :list="list"
       :conf="conf"
-      @handleChange="handleChange"
+      @change="handleChange"
     />
   </div>
 </template>
