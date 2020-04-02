@@ -1,5 +1,8 @@
 <template>
-  <div class="dm-table-list">
+  <div
+    v-loading="loading"
+    class="dm-table-list"
+  >
     <div
       v-if="$slots.title || dataResource && dataResource.title"
       class="dm-table-list-header"
@@ -84,7 +87,6 @@
 <script>
   import { param,deepClone} from '@/lib/tools'
   import colContent from './col-content'
-
   let vm = null;
   const defaultConfig = {
     current:1,
@@ -189,7 +191,11 @@
           value:''
         },
         // table 数据
-        dataResource:'',
+        dataResource:{
+          list:[],
+          total:0
+        },
+        loading:false,
         chooseRows:[],
         listeners:{}
       }
@@ -272,6 +278,7 @@
           rn:this.resultTableConf.pages.size,
           pn:this.pn
         };
+        this.loading = true;
         if(this.sort.key && this.sort.value){
           paramObj[this.sort.key] = this.sort.value
         }
@@ -333,6 +340,7 @@
             }
             dataResource.list = this.setUIField(dataResource.list || [])
             this.dataResource = dataResource
+            this.loading = false
             return this.dataResource;
         })
           .then(() => {
