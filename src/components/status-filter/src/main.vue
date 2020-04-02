@@ -17,7 +17,7 @@
   export default {
     props:{
       list:{
-        type:Array,
+        type:[Array,Object],
         default(){
           return []
         }
@@ -52,7 +52,7 @@
       }
     },
     created() {
-      this.activeStatus = this.conf.default;
+      this.activeStatus = this.conf.default || '';
       this.setStatus();
     },
     methods:{
@@ -65,9 +65,11 @@
         return obj;
       },
       changeStatus(item){
-        this.activeStatus = item[this.props.key];
-        const obj = this.setStatus();
-        this.$emit('change', obj)
+        if(this.activeStatus != item[this.props.key]) {
+          this.activeStatus = item[this.props.key];
+          const obj = this.setStatus();
+          this.$emit('change', obj)
+        }
       }
     }
   }
