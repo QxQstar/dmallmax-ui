@@ -1,3 +1,18 @@
+## [2.5.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.5.0...v2.5.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* 修改 searchBox 样式的bug ([f94e0a0](https://github.com/QxQstar/dmallmax-ui/commit/f94e0a0078e9b0d97da63d5a48669e287e119417))
+* 解决 status-filter 的筛选的bug ([6cb5077](https://github.com/QxQstar/dmallmax-ui/commit/6cb507722dca2fb8804e4c7500bcbe31d048cab7))
+
+
+### Features
+
+* 修改 searchBox 的样式 ([e05b833](https://github.com/QxQstar/dmallmax-ui/commit/e05b8330269a190b5dedccff026fffa3cb476ea4))
+
+
+
 # [2.5.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.4.0...v2.5.0) (2020-03-30)
 
 
