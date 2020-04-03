@@ -49,3 +49,20 @@
     clear: both;
   }
 }
+
+.dm-elem--pointer{
+  cursor: pointer;
+}
+
+.dm-elem--full-height{
+  height: 100%;
+}
+
+.dm-elem--flex-column{
+  flex-direction: column;
+}
+
+.dm-elem-border--primary{
+  border: 1px solid $--color-primary;
+  border-radius: $--border-radius-base;
+}
