@@ -1,4 +1,4 @@
-## [2.5.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.5.0...v2.5.1) (2020-04-02)
+# [2.6.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.5.0...v2.6.0) (2020-04-03)
 
 
 ### Bug Fixes
@@ -9,7 +9,10 @@
 
 ### Features
 
+* statusFilter 支持传一个对象 ([826a6e1](https://github.com/QxQstar/dmallmax-ui/commit/826a6e1ed20f5fbb971eb652bd556f0994c75a91))
 * 修改 searchBox 的样式 ([e05b833](https://github.com/QxQstar/dmallmax-ui/commit/e05b8330269a190b5dedccff026fffa3cb476ea4))
+* 增加基础样式 ([6d87d43](https://github.com/QxQstar/dmallmax-ui/commit/6d87d43a825c61198b13a0316cdc19ad6fc04804))
+* 给table-list 增加 loading ([f7ffd4d](https://github.com/QxQstar/dmallmax-ui/commit/f7ffd4d3c60e0eaaf64853226716d0513bab80c2))
 
 
 
