@@ -46,7 +46,7 @@
             </template>
             <template v-else>
               <template
-                v-if="!item.props"
+                v-if="!Array.isArray(selectInfo[item.key])"
               >
                 <dm-option
                   v-if="selectInfo[item.key] && Object.keys(selectInfo[item.key]).every(key => key + '' !== '0')"
