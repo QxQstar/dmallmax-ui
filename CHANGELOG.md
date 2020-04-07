@@ -1,3 +1,13 @@
+## [2.6.2](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.1...v2.6.2) (2020-04-07)
+
+
+### Bug Fixes
+
+* 解决 batch-input value 为 字符串的bug ([b861225](https://github.com/QxQstar/dmallmax-ui/commit/b8612255e221abc00807d175a2657ebec980739b))
+* 解决 searchBox 中数据类型判断错误的bug ([be9c549](https://github.com/QxQstar/dmallmax-ui/commit/be9c549acfcf657f1563bb038766e26d8bcf3bc0))
+
+
+
 ## [2.6.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.0...v2.6.1) (2020-04-07)
 
 
