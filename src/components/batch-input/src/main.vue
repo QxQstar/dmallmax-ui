@@ -47,7 +47,7 @@
   export default {
     props:{
       value:{
-        type:Array,
+        type:[Array,String],
         default() {
           return []
         }
@@ -70,7 +70,11 @@
     computed:{
       searchVal:{
         get(){
-          return this.value.join(',');
+          if(typeof this.value === 'string'){
+            return this.value
+          } else {
+            return this.value.join(',');
+          }
         },
         set(val){
           this.$emit('input',val.split(','))
