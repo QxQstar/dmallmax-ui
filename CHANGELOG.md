@@ -1,3 +1,12 @@
+## [2.6.1](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.0...v2.6.1) (2020-04-07)
+
+
+### Bug Fixes
+
+* 解决 table-list 请求接口参数为false 的bug ([5144f9d](https://github.com/QxQstar/dmallmax-ui/commit/5144f9dd7b5afef67009d8c2815ba1851deba5fb))
+
+
+
 # [2.6.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.5.0...v2.6.0) (2020-04-03)
 
 
