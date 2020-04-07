@@ -85,7 +85,7 @@
   </div>
 </template>
 <script>
-  import { param,deepClone} from '@/lib/tools'
+  import { param,deepClone,cleanObject } from '@/lib/tools'
   import colContent from './col-content'
   let vm = null;
   const defaultConfig = {
@@ -282,9 +282,10 @@
         if(this.sort.key && this.sort.value){
           paramObj[this.sort.key] = this.sort.value
         }
+        const param = cleanObject(this.resultTableConf.customParam ? this.resultTableConf.customParam(this.$parent,paramObj) : paramObj)
         const url = this.getUrl(
           this.resultTableConf.url,
-          this.resultTableConf.customParam ? this.resultTableConf.customParam(this.$parent,paramObj) : paramObj
+          param
         );
 
         return this.http(url)

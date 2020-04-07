@@ -142,6 +142,21 @@ export function cleanArray(actual) {
   return newArray
 }
 
+/**
+ * 从对象中移除 空字符串，undefined，null
+ * @param object
+ */
+export function cleanObject(object = {}) {
+  const result = {}
+  Object.keys(object).forEach(key => {
+    const value = object[key]
+    if(value !== '' && value !== undefined && value !== null) {
+      result[key] = value
+    }
+  })
+  return result;
+}
+
 /** 将对象转化成 url 查询字符串的形式
  * @param {Object} obj
  * @returns {string}
