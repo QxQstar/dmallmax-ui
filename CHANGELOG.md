@@ -1,3 +1,12 @@
+## [2.6.3](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.2...v2.6.3) (2020-04-08)
+
+
+### Bug Fixes
+
+* 修复按钮样式的bug ([c432bc7](https://github.com/QxQstar/dmallmax-ui/commit/c432bc7cdd92bbb574e3379708b026517a0ca1f7))
+
+
+
 ## [2.6.2](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.1...v2.6.2) (2020-04-07)
 
 

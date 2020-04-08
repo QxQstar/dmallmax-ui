@@ -1,6 +1,6 @@
 {
   "name": "dmallmax-ui",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name DMALLMAX ./src/components/index.js",
