@@ -34,3 +34,14 @@
     box-shadow: 1px 1px 3px $--color-primary-light-2;
   }
 }
+.el-button--primary{
+  &:hover,
+  &:focus{
+    border-color: $--color-primary ;
+    background-color: $--color-primary;
+    color: #ffffff;
+  }
+  border-color: $--color-primary ;
+  background-color: $--color-primary;
+  color: #ffffff;
+}
