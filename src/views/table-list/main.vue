@@ -1,11 +1,24 @@
 <template>
-  <dm-table-list
-    :http="http"
-    :table-conf="tableConf"
-    @selection-change="handleSelectionChange"
-    @current-change="handlePageChange"
-    @sort-change="sortChange"
-  />
+  <div>
+    <dm-button
+      @click="modifyFilter"
+    >
+      修改filter
+    </dm-button>
+    <dm-button
+      @click="modifyList"
+    >
+      修改 List
+    </dm-button>
+    <dm-table-list
+      ref="tableList"
+      :http="http"
+      :table-conf="tableConf"
+      @selection-change="handleSelectionChange"
+      @current-change="handlePageChange"
+      @sort-change="sortChange"
+    />
+  </div>
 </template>
 <script>
   import { http } from "../../lib/http";
@@ -20,18 +33,8 @@
             size:10
           },
           dataResource:{
-            list:[{
-              uid:'3344',
-              person:{
-                name:'bella'
-              }
-            },{
-              uid:'44',
-              person:{
-                name:'何遇'
-              }
-            }],
-            total:2
+            list:[],
+            total:0
           },
           thead:[
             {
@@ -100,6 +103,28 @@
       },
       sortChange(obj){
         console.log(obj)
+      },
+      modifyFilter(){
+        this.$set(this.tableConf.filters,'uid',function (h, row) {
+          return h('span',row.uid +'--')
+        })
+      },
+      modifyList(){
+        this.tableConf.dataResource = {
+          list:[{
+            uid:'3344',
+            person:{
+              name:'bella'
+            }
+          },{
+            uid:'44',
+            person:{
+              name:'何遇'
+            }
+          }],
+          total:2
+        }
+        this.$refs.tableList.fetchData()
       }
     }
   }
