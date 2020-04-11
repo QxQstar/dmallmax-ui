@@ -181,10 +181,6 @@
     data(){
       return {
         current:this.tableConf.current || 1,
-        resultTableConf:{
-          ...defaultConfig,
-          ...this.tableConf
-        },
         // 排序
         sort:{
           key:'',
@@ -207,7 +203,13 @@
       },
       pn() {
         return (this.current - 1 ) * this.resultTableConf.pages.size
-      }
+      },
+      resultTableConf(){
+        return {
+          ...defaultConfig,
+          ...this.tableConf
+        }
+      },
     },
     watch:{
       '$DMALLMAX.searchQuery.query'(){
