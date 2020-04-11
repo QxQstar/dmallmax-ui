@@ -1,3 +1,13 @@
+# [2.7.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.3...v2.7.0) (2020-04-11)
+
+
+### Features
+
+* 修改 table-list 的 demo ([83e2c85](https://github.com/QxQstar/dmallmax-ui/commit/83e2c85eb61159a4b2cdc4a6e93342fa4ae56245))
+* 让 table-list 的表头是响应式的 ([36980b6](https://github.com/QxQstar/dmallmax-ui/commit/36980b6a14ba974e05cc2801f4bcac1f8a7c3569))
+
+
+
 ## [2.6.3](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.2...v2.6.3) (2020-04-08)
 
 
