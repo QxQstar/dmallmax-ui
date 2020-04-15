@@ -1,3 +1,12 @@
+# [2.8.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.7.0...v2.8.0) (2020-04-15)
+
+
+### Features
+
+* 给 table-list 中的每一页设置 index ([794ebfd](https://github.com/QxQstar/dmallmax-ui/commit/794ebfddb0cbe1d03379a9cc791b7a15159902ba))
+
+
+
 # [2.7.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.6.3...v2.7.0) (2020-04-11)
 
 
