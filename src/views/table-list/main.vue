@@ -6,6 +6,11 @@
       修改filter
     </dm-button>
     <dm-button
+      @click="modifykey"
+    >
+      修改key
+    </dm-button>
+    <dm-button
       @click="modifyList"
     >
       修改 List
@@ -17,6 +22,7 @@
       @selection-change="handleSelectionChange"
       @current-change="handlePageChange"
       @sort-change="sortChange"
+      @header-click="handleHeaderClick"
     />
   </div>
 </template>
@@ -39,20 +45,24 @@
           thead:[
             {
               type:'selection',
-              width:55
+              width:55,
+              index:0
             },
             {
               value:'账号ID',
               key:'uid',
+              index:1
             },
             {
               value:'姓名',
               key:'person.name',
-              editable:true
+              editable:true,
+              index:2
             },
             {
               value:'操作',
-              type:'operation'
+              type:'operation',
+              index:3
             }
           ],
           filters:{
@@ -113,6 +123,7 @@
         this.tableConf.dataResource = {
           list:[{
             uid:'3344',
+            age:'2',
             person:{
               name:'bella'
             }
@@ -125,6 +136,16 @@
           total:2
         }
         this.$refs.tableList.fetchData()
+      },
+      modifykey(){
+        const thead = this.tableConf.thead
+        thead[1].key='age'
+
+        this.tableConf.thead = [].concat(thead)
+        this.$refs.tableList.fetchData()
+      },
+      handleHeaderClick(col){
+        console.log(col)
       }
     }
   }

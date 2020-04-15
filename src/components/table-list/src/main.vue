@@ -29,6 +29,7 @@
           type="selection"
           :width="col.width || '55px'"
           :fixed="col.fixed || false"
+          :index="col.index"
         />
         <dm-table-column
           v-else-if="resultTableConf.filters[col.key] || (col.type === 'operation' && resultTableConf.filters._OPERATION_)"
@@ -40,6 +41,7 @@
           :width="col.width"
           :fixed="col.fixed || false"
           :sortable="col.sortable||false"
+          :index="col.index"
         >
           <template
             slot-scope="scope"
@@ -55,6 +57,7 @@
         <dm-table-column
           v-else
           :key="index"
+          :index="col.index"
           :type="col.type"
           :label="col.value"
           :prop="col.key || ''"
