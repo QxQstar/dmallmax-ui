@@ -1,3 +1,17 @@
+# [2.9.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.8.0...v2.9.0) (2020-05-29)
+
+
+### Bug Fixes
+
+* table-list 右侧 title 的取值 ([0e96a70](https://github.com/QxQstar/dmallmax-ui/commit/0e96a70f277dafa26eca7e02f2e698ab6a7cb1bf))
+
+
+### Features
+
+* table-list 组件增加右侧 title ([ecd2ae3](https://github.com/QxQstar/dmallmax-ui/commit/ecd2ae322b41706aad36f62913adb798b9647944))
+
+
+
 # [2.8.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.7.0...v2.8.0) (2020-04-15)
 
 
