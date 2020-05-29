@@ -5,10 +5,21 @@
   >
     <div
       v-if="$slots.title || dataResource && dataResource.title"
-      class="dm-table-list-header"
+      class="dm-table-list-header dm-text--clear"
     >
-      <slot name="title">
-        {{ dataResource.title }}
+      <slot
+        name="title"
+      >
+        <span
+          class="dm-table-list-header--title"
+        >{{ dataResource.title }}</span>
+      </slot>
+      <slot
+        name="right"
+      >
+        <span
+          class="dm-table-list-header--right"
+        >{{ dataResource.title }}</span>
       </slot>
     </div>
     <dm-table
@@ -306,6 +317,7 @@
           }
           resolve({
               content:{
+                ...this.resultTableConf.dataResource,
                 list:list,
                 total:this.resultTableConf.dataResource.total || 0
               }

@@ -1,4 +1,14 @@
 @import "../../theme/reset-variables";
 .dm-table-list-header{
-  margin-bottom: $--area-vertical-gap;
+  margin-bottom: $--area-vertical-gap / 2;
+}
+
+.dm-table-list-header--title{
+  font-size: $--font-size-medium;
+}
+
+.dm-table-list-header--right{
+  font-size: $--font-size-medium;
+  float: right;
+  margin-right: 30px;
 }

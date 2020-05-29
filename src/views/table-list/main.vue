@@ -133,7 +133,9 @@
               name:'何遇'
             }
           }],
-          total:2
+          total:2,
+          title:'游游泳',
+          right:'游游泳'
         }
         this.$refs.tableList.fetchData()
       },
