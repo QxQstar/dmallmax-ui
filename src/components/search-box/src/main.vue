@@ -86,21 +86,6 @@
             clearable
             :props="{...item.props,...{expandTrigger:'hover'}}"
           />
-          <!--选择框  自带搜索url-->
-          <!-- <el-select v-if="item.type == 'select_online'"
-              size="mini"
-              remote
-              filterable
-              :remote-method="remoteMethod(item.url, item.key)"
-              :multiple="item.ismultiple"
-              :placeholder="item.ph || '请选择'"
-              v-model="searchModel[item.key]">
-              <el-option v-for="item2 in selectInfo[item.key]"
-                  :key="item2[(item.props && item.props.key) || 'id']"
-                  :label="item2[(item.props && item.props.label) || 'value']"
-                  :value="item2[(item.props && item.props.key) || 'id']">
-              </el-option>
-          </el-select> -->
           <!--单个时间选择-->
           <dm-date-picker
             v-if="singleDateType.indexOf(item.type) > -1"
@@ -205,7 +190,7 @@
         let searchQuery = {};
         for(let key in query) {
           if(query[key]) {
-            const _key = key.trim();
+            const _key = key.replace(/\s/g,'')
             if(/^\[.+\]$/.test(_key)){
               searchQuery = {
                 ...searchQuery,
