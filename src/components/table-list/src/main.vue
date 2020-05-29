@@ -4,7 +4,7 @@
     class="dm-table-list"
   >
     <div
-      v-if="$slots.title || dataResource && dataResource.title"
+      v-if="$slots.title || dataResource && (dataResource.title || dataResource.right) || $slots.right"
       class="dm-table-list-header dm-text--clear"
     >
       <slot
