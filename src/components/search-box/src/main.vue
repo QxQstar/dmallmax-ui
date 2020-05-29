@@ -172,8 +172,8 @@
       searchModel: {
         handler(val) {
           // 修改传入进来的参数
-          const searchQuery = this.getQuery(val)
-          this.$emit('update:query', searchQuery)
+          const searchParams = this.getSearchParams(val)
+          this.$emit('update:query', searchParams)
         },
         deep: true // 深度监听
       }
@@ -182,10 +182,9 @@
       if(this.searchConf && this.searchConf.length > 0) {
         this.getInitParams();
       }
-
     },
     methods: {
-      getQuery(val){
+      getSearchParams(val){
         let query = {...val};
         let searchQuery = {};
         for(let key in query) {
@@ -219,17 +218,17 @@
         });
         this.searchModel = searchParam;
         this.initSearchModel = {...searchParam};
-        this.setSearchQuery();
+        this.setSearchParams();
       },
-      setSearchQuery(){
-        const searchQuery = this.getQuery(this.searchModel);
-        this.$DMALLMAX.searchQuery.changeSearchParams(searchQuery)
-        return searchQuery
+      setSearchParams(){
+        const searchParams = this.getSearchParams(this.searchModel);
+        this.$DMALLMAX.searchQuery.changeSearchParams(searchParams)
+        return searchParams
       },
       //点击搜索
       handleSearch() {
-        const searchQuery = this.setSearchQuery();
-        this.$emit('search', searchQuery);
+        const searchParams = this.setSearchParams();
+        this.$emit('search', searchParams);
       },
       //点击重置
       handleReset() {
