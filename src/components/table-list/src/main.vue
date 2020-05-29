@@ -19,7 +19,7 @@
       >
         <span
           class="dm-table-list-header--right"
-        >{{ dataResource.title }}</span>
+        >{{ dataResource.right }}</span>
       </slot>
     </div>
     <dm-table
