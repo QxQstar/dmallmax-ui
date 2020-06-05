@@ -10,9 +10,9 @@
       <slot
         name="title"
       >
-        <span
-          class="dm-table-list-header--title"
-        >{{ dataResource.title }}</span>
+        <v-title
+          :title="dataResource.title"
+        />
       </slot>
       <slot
         name="right"
@@ -173,6 +173,21 @@
           return {
             oldRowData:deepClone(this.row)
           }
+        }
+      },
+      vTitle:{
+        render(h){
+          if(typeof this.title === 'function') {
+           return this.title(h)
+          } else {
+            return h('span',this.title)
+          }
+        },
+        props:{
+          title:{
+            type:[Function,String],
+            required: true
+          },
         }
       }
     },
