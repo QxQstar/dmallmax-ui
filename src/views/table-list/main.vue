@@ -134,7 +134,11 @@
             }
           }],
           total:2,
-          title:'游游泳',
+          title:(h) => {
+            return h('span',{
+              style:{color:'red'}
+            },'444')
+          },
           right:'游游泳'
         }
         this.$refs.tableList.fetchData()
