@@ -1,3 +1,21 @@
+# [2.10.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.9.0...v2.10.0) (2020-06-08)
+
+
+### Bug Fixes
+
+* search-box 字段解构去掉所有的空格 ([9ab3831](https://github.com/QxQstar/dmallmax-ui/commit/9ab3831e8942a1572e046a34ac554a264f4ff4c0))
+* 修改 table-list 组件的 header 的显示条件 ([6120567](https://github.com/QxQstar/dmallmax-ui/commit/6120567919dbfad077824e6a5d117ea6a4e871aa))
+
+
+### Features
+
+* table-list  的表头支持渲染函数 ([a8a4ebf](https://github.com/QxQstar/dmallmax-ui/commit/a8a4ebf22e040cab2ea10ff4c3ba59ab7e162201))
+* 修改 search-box 的变量名 ([8b385c8](https://github.com/QxQstar/dmallmax-ui/commit/8b385c86c74cb226f73d7700ed06c8953b357f39))
+* 修改 table-list 的demo ([ce8d11b](https://github.com/QxQstar/dmallmax-ui/commit/ce8d11b766df277d989b3d2c152cc06ecdc2fdc9))
+* 调整 table-list 组件 title 区域的字体样式 ([10c53d8](https://github.com/QxQstar/dmallmax-ui/commit/10c53d81c5a519e2480b0d7c326168bf6523b1b9))
+
+
+
 # [2.9.0](https://github.com/QxQstar/dmallmax-ui/compare/v2.8.0...v2.9.0) (2020-05-29)
 
 
