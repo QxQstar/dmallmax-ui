@@ -9,7 +9,8 @@
     "pub": "npm run build && npm publish --access public",
     "report": "vue-cli-service build --mode development --report",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build"
+    "styleguide:build": "vue-cli-service styleguidist:build",
+    "watch":"nodemon --ignore dist/ --ignore node_modules/ --watch src/components --watch src/styles/components --watch src/styles/theme -C -e vue,html,less,scss,css,js --debug -x \"npm run build && yalc publish\""
   },
   "main": "dist/DMALLMAX.common.js",
   "dependencies": {
