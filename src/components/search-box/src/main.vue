@@ -135,11 +135,15 @@
 </template>
 <script>
   import { isFunction } from "../../../lib/tools";
-
+  /**
+   * @displayName dm-search-box 搜索框组
+   */
   export default {
     name: 'DmSearchBox',
     props: {
-      //搜索配置
+      /**
+       * 搜索框组的配置，用于配置搜索框组要显示的搜索项
+       */
       searchData: {
         type: Object,
         default(){
@@ -172,6 +176,11 @@
         handler(val) {
           // 修改传入进来的参数
           const searchParams = this.getSearchParams(val)
+          /**
+           * 当搜索框的值发生改变时初始
+           *
+           * @property {object} 搜索框组当前值的集合
+           */
           this.$emit('update:query', searchParams)
         },
         deep: true // 深度监听
@@ -227,12 +236,20 @@
       //点击搜索
       handleSearch() {
         const searchParams = this.setSearchParams();
+        /**
+         * 点击搜索按钮或者重置按钮时触发
+         * @property {object} 搜索框组当前值的集合
+         */
         this.$emit('search', searchParams);
       },
       //点击重置
       handleReset() {
         this.searchModel = {...this.initSearchModel};
         this.handleSearch();
+        /**
+         * 点击重置按钮时触发
+         *
+         */
         this.$emit('reset');
       }
     },

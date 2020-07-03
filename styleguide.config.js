@@ -1,6 +1,6 @@
 module.exports = {
-	// set your styleguidist configuration here
 	title: 'Default Style Guide',
+  require: ['./docs/install.components.js'],
 	components: 'src/components/**/**/main.vue',
   ignore:[
     '**/__tests__/**',
@@ -80,15 +80,12 @@ module.exports = {
     '**/components/tree/**',
     '**/components/upload/**',
   ],
-	// defaultExample: true,
 	sections: [
 	  {
 	    name: 'Documentation',
 	    components: 'src/components/**/main.vue'
 	  }
 	],
-	// webpackConfig: {
-	//   // custom config goes here
-	// },
-	exampleMode: 'expand'
+  usageMode:'expand',
+	exampleMode: 'collapse'
 }

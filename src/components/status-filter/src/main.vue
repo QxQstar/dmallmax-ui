@@ -14,15 +14,24 @@
   </div>
 </template>
 <script>
+  /**
+   * @displayName dm-status-filter 状态筛选
+   */
   export default {
     name:'DmStatusFilter',
     props:{
+      /**
+       * 状态筛选组件要展示的数据
+       */
       list:{
         type:[Array,Object],
         default(){
           return []
         }
       },
+      /**
+       * 默认值、显示配置
+       */
       conf:{
         type:Object,
         default() {
@@ -69,6 +78,11 @@
         if(this.activeStatus != item[this.props.key]) {
           this.activeStatus = item[this.props.key];
           const obj = this.setStatus();
+          /**
+           * 当状态筛选组件选中的值发生变化时触发
+           *
+           * @property {object} 状态筛选的值
+           */
           this.$emit('change', obj)
         }
       }

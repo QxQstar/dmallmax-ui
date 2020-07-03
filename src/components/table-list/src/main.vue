@@ -7,6 +7,7 @@
       v-if="$slots.title || dataResource && (dataResource.title || dataResource.right) || $slots.right"
       class="dm-table-list-header dm-text--clear"
     >
+      <!-- @slot 列表左上角的标题 -->
       <slot
         name="title"
       >
@@ -14,6 +15,7 @@
           :title="dataResource.title"
         />
       </slot>
+      <!-- @slot 列表右上角的标题 -->
       <slot
         name="right"
       >
@@ -144,6 +146,9 @@
       return param
     }
   };
+  /**
+   * @displayName dm-table-list 列表
+   */
   export default {
     name:'DmTableList',
     components:{
@@ -193,6 +198,9 @@
       }
     },
     props:{
+      /**
+       * 列表配置
+       */
       tableConf:{
         type:Object,
         default(){
@@ -201,6 +209,9 @@
           }
         }
       },
+      /**
+       * 请求列表数据的 fetch 或者 post 方法
+       */
       http:{
         type:Function,
         default() {
@@ -269,10 +280,22 @@
           value:order || undefined
         }
         this.fetchData();
+        /**
+         * 当表格的排序条件发生变化的时候会触发该事件
+         *
+         * @property {object} { column, prop, order }
+         */
         this.$emit('sort-change',{column, prop, order })
       },
       handlePageChange(page){
         this.fetchData();
+        /**
+         * currentPage 改变时会触发
+         *
+         * @property {number} pn - 第一条数据的下标。pn = (page - 1 ) * rn
+         * @property {number} rn - 每页条数
+         * @property {number} page - 当前页
+         */
         this.$emit('current-change',this.pn,this.resultTableConf.pages.size,page)
       },
       handleSelectionChange(rows){
@@ -296,7 +319,11 @@
         } else {
           this.chooseRows = rows;
         }
-
+        /**
+         * 当选择项发生变化时会触发该事件
+         *
+         * @property {object} selection
+         */
         this.$emit('selection-change',this.chooseRows)
       },
       getUrl(address,obj){
@@ -361,6 +388,11 @@
           }
         })
       },
+      /**
+       * 更新页面数据
+       *
+       * @public
+       */
       fetchData(){
         let fn = '';
         if(this.resultTableConf.url) {

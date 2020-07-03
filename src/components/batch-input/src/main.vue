@@ -44,19 +44,32 @@
   </div>
 </template>
 <script>
+  /**
+   * @displayName dm-batch-input 批量输入框
+   */
   export default {
     name:'DmBatchInput',
     props:{
+      /**
+       * 绑定值
+       * @model
+       */
       value:{
         type:[Array,String],
         default() {
           return []
         }
       },
+      /**
+       * 输入框占位文本
+       */
       placeholder:{
         type:String,
         default:''
       },
+      /**
+       * 禁用
+       */
       disabled:{
         type:Boolean,
         default:false
@@ -78,6 +91,11 @@
           }
         },
         set(val){
+          /**
+           * 在批量输入框的值改变时触发
+           *
+           * @property {array} 批量输入框的值
+           */
           this.$emit('input',val.split(','))
         }
       }

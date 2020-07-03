@@ -1,0 +1,38 @@
+<template>
+  <dm-top-choose
+    :config="config"
+    @statusChange="statusChange"
+  >
+    <dm-button
+      slot="otherBtn"
+    >
+      导出
+    </dm-button>
+  </dm-top-choose>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        config:{
+          title:'商品管理',
+          content:[{status:'3',status_name:'待发货',total:34},{status:'4',status_name:'待收货',total:4}],
+          statusParam:{
+            key:'status',
+            props:{
+              label:'status_name',
+              num:'total',
+              key:'status'
+            },
+            default:'3'
+          }
+        }
+      }
+    },
+    methods:{
+      statusChange(value){
+        console.log(value)
+      }
+    }
+  }
+</script>

@@ -1,6 +1,6 @@
 export default [
   {
     path:'/topChoose',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/top-choose/main.vue')
+    component: () => import(/* webpackChunkName: "home" */ '@/views/topChoose/main.vue')
   },
 ]

@@ -56,8 +56,15 @@
               key:'[date_begin,date_end]',
               type:'daterange',
               formatter:'yyyy-MM-dd',
-              label:'时间',
+              label:'日期范围',
               default(){return ['2019-12-1','2019-12-2']}
+            },
+            {
+              key:'data',
+              type:'date',
+              formatter:'yyyy-MM-dd',
+              label:'日期',
+              default:''
             },
             {
               key: 'key',
@@ -72,11 +79,11 @@
             },
 
             {
-              key: '[category,onde,rr]',
+              key: '[top_1,top_2,top_3]',
               type: 'cascader',
               label: '',
               props:{
-                value:'value' // select组件中用下拉选择的显示的选项和后端需要的筛选字段
+                value:'value'
               },
             },
           ],
@@ -95,7 +102,7 @@
                 label:'否'
               }
             ],
-            '[category,onde,rr]':[{
+            '[top_1,top_2,top_3]':[{
               value: 'zhinan',
               label: '指南',
               children: [{
@@ -295,16 +302,16 @@
       }
     },
     created(){
-      const param = {
+      const initParam = {
         date_begin:'2019-12-4',
         date_end:'2019-12-6',
         checked_by:'SUPPORT_STAFF',
-        category: "zujian",
-        onde: "form",
-        rr: "checkbox",
+        top_1: "zujian",
+        top_2: "form",
+        top_3: "checkbox",
       }
       const getDefault = (searchItem) => {
-        return this.combineValue(param,searchItem.key) || searchItem.default
+        return this.combineValue(initParam,searchItem.key) || searchItem.default
       }
       this.searchData.searchConf = this.searchData.searchConf.map(item => {
         return {
@@ -318,12 +325,12 @@
       // 根据 key  的格式生成参数的格式
       combineValue(value,key){
         let result
-        key = key.trim();
+        key = key.replace(/\s/g,'')
         // 如果 key 是 [key1,key2] 这种形式
         if(/^\[.+\]$/.test(key)){
-          const keyArr = key.replace(/^\[/,'').replace(/\]$/,'').split(',');
+          const keyAtop_3 = key.replace(/^\[/,'').replace(/\]$/,'').split(',');
           result = []
-          keyArr.forEach(key => {
+          keyAtop_3.forEach(key => {
             result.push(value[key])
           });
 
