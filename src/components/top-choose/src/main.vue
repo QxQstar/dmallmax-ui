@@ -28,6 +28,7 @@
 </template>
 <script>
   export default {
+    name:'DmTopChoose',
     props:{
       config:{
         type:Object,

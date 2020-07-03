@@ -145,6 +145,7 @@
     }
   };
   export default {
+    name:'DmTableList',
     components:{
       colContent,
       vOperation:{

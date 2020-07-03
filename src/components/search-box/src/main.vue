@@ -137,8 +137,7 @@
   import { isFunction } from "../../../lib/tools";
 
   export default {
-    name: 'DataSearch',
-    componentName: 'dataSearch',
+    name: 'DmSearchBox',
     props: {
       //搜索配置
       searchData: {

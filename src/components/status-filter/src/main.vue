@@ -15,6 +15,7 @@
 </template>
 <script>
   export default {
+    name:'DmStatusFilter',
     props:{
       list:{
         type:[Array,Object],

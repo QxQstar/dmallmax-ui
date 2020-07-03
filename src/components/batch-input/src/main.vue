@@ -45,6 +45,7 @@
 </template>
 <script>
   export default {
+    name:'DmBatchInput',
     props:{
       value:{
         type:[Array,String],
