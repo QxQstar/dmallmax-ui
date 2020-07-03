@@ -299,7 +299,12 @@
         this.$emit('selection-change',this.chooseRows)
       },
       getUrl(address,obj){
-        return address + '?' + param(obj)
+        const method = this.resultTableConf.method.toUpperCase()
+        if(method !== 'POST') {
+          return address + '?' + param(obj)
+        } else {
+          return address
+        }
       },
       // 从接口中获取数据
       httpData(){
@@ -318,8 +323,8 @@
           this.resultTableConf.url,
           param
         );
-
-        return this.http(url)
+        const method = this.resultTableConf.method.toUpperCase()
+        return this.http(url,method === 'POST' ? param: {})
       },
       // 本地分页
       getData(){
