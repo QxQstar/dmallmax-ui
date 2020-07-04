@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'Default Style Guide',
+	title: 'dmallmax-ui 组件说明文档',
   require: ['./docs/install.components.js'],
 	components: 'src/components/**/**/main.vue',
   ignore:[
